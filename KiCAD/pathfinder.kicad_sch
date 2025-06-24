@@ -657,16 +657,16 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 118.745 45.72 0)
+		(at 135.255 47.625 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "498eb3f2-0db3-44c0-803e-78d2b6fadcc9")
-		(property "Reference" "SW1"
-			(at 118.745 38.1 0)
+		(uuid "0c53668d-1b5d-4ea4-a3cf-23751f8367b7")
+		(property "Reference" "SW2"
+			(at 135.255 40.005 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -674,7 +674,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 118.745 40.64 0)
+			(at 135.255 42.545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -682,7 +682,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.745 40.64 0)
+			(at 135.255 42.545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -691,7 +691,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.745 40.64 0)
+			(at 135.255 42.545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -700,7 +700,75 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 118.745 45.72 0)
+			(at 135.255 47.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7236dd44-d038-405e-b31d-3ca19238ef7b")
+		)
+		(pin "1"
+			(uuid "0309b63c-bf08-42a5-b426-471b1e4942f5")
+		)
+		(instances
+			(project "pathfinder"
+				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 121.92 47.625 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "498eb3f2-0db3-44c0-803e-78d2b6fadcc9")
+		(property "Reference" "SW1"
+			(at 121.92 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 121.92 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 121.92 47.625 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -725,7 +793,7 @@
 	)
 	(symbol
 		(lib_id "XIAO_RP2040:MOUDLE-SEEEDUINO-XIAO")
-		(at 69.215 60.325 0)
+		(at 135.255 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -734,7 +802,7 @@
 		(fields_autoplaced yes)
 		(uuid "5525b3f6-3e41-4850-a08d-62666658ece1")
 		(property "Reference" "U1"
-			(at 70.485 45.72 0)
+			(at 136.525 64.135 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -742,7 +810,7 @@
 			)
 		)
 		(property "Value" "MOUDLE-SEEEDUINO-XIAO"
-			(at 70.485 48.26 0)
+			(at 136.525 66.675 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -750,7 +818,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.705 57.785 0)
+			(at 118.745 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -759,7 +827,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.705 57.785 0)
+			(at 118.745 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -768,7 +836,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 69.215 60.325 0)
+			(at 135.255 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -822,6 +890,74 @@
 			(project ""
 				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 147.955 47.625 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6afd4386-e0ee-4e86-b63e-5cfa3c1612ba")
+		(property "Reference" "SW3"
+			(at 147.955 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 147.955 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.955 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.955 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 147.955 47.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "784c4707-2cb6-4780-9194-a7bc000b4e41")
+		)
+		(pin "1"
+			(uuid "9dbeea78-cff4-4f55-a63c-e6e38b010eca")
+		)
+		(instances
+			(project "pathfinder"
+				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -899,6 +1035,160 @@
 			(project ""
 				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 145.415 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c6e1a5d-3b2a-4c9b-82a1-8ca0bcafe797")
+		(property "Reference" "D3"
+			(at 143.8275 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 143.8275 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 145.415 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 145.415 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 145.415 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 145.415 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "516f413b-d86f-40c8-abaf-c328ae8119e5")
+		)
+		(pin "2"
+			(uuid "7f9f6ca2-b7c1-4e84-934d-491f42224b34")
+		)
+		(instances
+			(project "pathfinder"
+				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 134.62 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eed0e1b1-1d59-4f14-9538-315a4dbd6329")
+		(property "Reference" "D2"
+			(at 133.0325 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 133.0325 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 134.62 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 134.62 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d256dfdb-9241-471a-879b-90718916d323")
+		)
+		(pin "2"
+			(uuid "11a9c22c-88bb-468f-a5f7-f60407946def")
+		)
+		(instances
+			(project "pathfinder"
+				(path "/f1cb4de3-b8b1-4574-8929-c87059d9860d"
+					(reference "D2")
 					(unit 1)
 				)
 			)
