@@ -6,221 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pathfinder</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-      min-height: 100vh;
-    }
-
-    body {
-      font-family: 'Ubuntu Mono', monospace;
-      background-color: #8c2e37;
-      color: white;
-      text-align: center;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .button {
-      background-color: #f4bf4f;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin-top: 2rem;
-      transition: background 0.3s;
-      box-shadow: 0.2rem 0.2rem 0.2rem black;
-    }
-
-    .button:hover {
-      background-color: #692229;
-    }
-
-    .treasure-map {
-      background-image: url();
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      max-width: 800px;
-      height: 60vh;
-      min-height: 400px;
-      margin: 2rem auto;
-      position: relative;
-      border: 5px solid #692229;
-      border-radius: 16px;
-    }
-
-    .step {
-      width: 5vw;
-      max-width: 40px;
-      height: 5vw;
-      max-height: 40px;
-      background-color: #f4bf4f;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid white;
-    }
-
-    .info-box {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
-      border-radius: 8px;
-      width: 10rem;
-      display: none;
-      color: #faffdc;
-      margin: 0 auto;
-    }
-
-    .active .info-box {
-      display: block;
-    }
-
-    #backBtn {
-      position: fixed;
-      top: 0rem;
-      right: 2rem;
-      z-index: 2;
-      padding: 0.8rem 1rem;
-      font-size: 1rem;
-    }
-
-    #nextBtn {
-      background-color: #98d3eb;
-      margin-bottom: 1rem;
-      right: 6rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      float: right;
-    }
-
-    #mapPage {
-      height: 100vh;
-      width: 100%;
-      display: none;
-      position: relative;
-      background-size: cover;
-      background-position: cover;
-      background-image: url(pathfinderbg.png);
-      padding: 2rem;
-    }
-
-    .step-page {
-      min-height: 100vh;
-      padding: 2rem;
-      overflow-y: auto;
-    }
-
-    @media (max-width: 768px) {
-      .info-box {
-        width: 80%;
-      }
-
-      .step {
-        width: 30px;
-        height: 30px;
-      }
-
-      #backBtn {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-      }
-    }
-
-    .subtitle {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-    }
-
-    .info {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      text-align: left;
-      max-width: 800px;
-    }
-
-    .title {
-      margin: auto;
-      z-index: 2;
-      color: black;
-    }
-
-    .stepContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-    }
-
-    .titleContainer {
-      vertical-align: middle;
-      padding: 0.3rem 0.8rem;
-      margin-bottom: 0.5rem;
-      border-radius: 0.5rem;
-      background-color: white;
-    }
-
-    .content-wrapper {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .image-text-section {
-      display: flex;
-      align-items: flex-start;
-      margin: 2rem 0;
-      gap: 2rem;
-    }
-
-    .image-text-section img {
-      flex-shrink: 0;
-    }
-
-    .image-text-section p {
-      flex: 1;
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      .image-text-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .image-text-section img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 400px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div id="mainPage" class="page">
     <h1 style="text-shadow: 0 0 1rem greenyellow; margin-top: 2rem">Welcome to Pathfinder</h1>
-    <p style="text-shadow: 0 0 1rem black" class="subtitle">Control cool PCBs with super cool microcontrollers</p>
+    <p style="text-shadow: 0 0 1rem black" class="subtitle">make a custom PCB controller board and efidget</p>
+    <p style="margin-top: 0.5rem">(maybe learn hardware skills along the way)</p>
     <button class="button" onclick="goToPage('mainPage', 'mapPage')">Build your Pathfinder</button>
   </div>
 
@@ -229,35 +22,36 @@
 
     <button class="button" id="backBtn" onclick="goToPage('mapPage', 'mainPage')">back</button>
 
-    <div class="treasure-map">
+    <div>
 
-      <div class="stepContainer" style="top:10%; left:10%;" onclick="goToPage('mapPage', 'step1')">
+      <div class="stepContainer" style="top:17% ; left:34.5%;" onclick="goToPage('mapPage', 'step1')">
         <div class="titleContainer">
           <h3 class="title">set up KiCAD</h3>
         </div>
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 25%; left: 45%;" onclick="goToPage('mapPage', 'step2')">
+      <div class="stepContainer" style="top: 41%; left:45%;" onclick="goToPage('mapPage', 'step2')">
         <div class="titleContainer">
           <h3 class="title">make schematic</h3>
         </div>
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 55%; left: 70%;" onclick="goToPage('mapPage', 'step3')">
+      <div class="stepContainer" style="top: 58%; left: 88%;" onclick="goToPage('mapPage', 'step3')">
         <div class="titleContainer">
           <h3 class="title">design PCB</h3>
         </div>
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 70%; left: 25%;" onclick="goToPage('mapPage', 'step4')">
+      <div class="stepContainer" style="top: 82%; left: 24%;" onclick="goToPage('mapPage', 'step4')">
         <div class="titleContainer">
           <h3 class="title">code firmware</h3>
         </div>
         <div class="step"></div>
       </div>
+
     </div>
   </div>
 
@@ -266,7 +60,7 @@
     <button class="button" id="backBtn" onclick="goToPage('step1', 'mapPage')">back to map</button>
 
     <div class="content-wrapper">
-      <h1>Step 1: Setting up KiCAD</h1>
+      <h1 style="padding-top:2rem">Step 1: Setting up KiCAD</h1>
 
       <div class="image-text-section">
         <p class="info">Alright, to design your PCB we're going to use a software called KiCAD. Download KiCAD
@@ -307,25 +101,303 @@
 
   <div id="step2" class="step-page" style="display: none">
     <div class="content-wrapper">
-      <h1>Step 2: Make Your Schematic</h1>
-      <p class="info">Placeholder text for routing PCB tracks and layout strategy. Add more info here.</p>
-      <button class="button" id="backBtn" onclick="goToPage('step2', 'mapPage')">Back to Map</button>
+      <button class="button" id="backBtn" onclick="goToPage('step2', 'mapPage')">back to map</button>
+
+      <h1 style="padding-top:2rem">Step 2: Make Your Schematic</h1>
+
+      <div class="image-text-section">
+        <p class="info">So, now that we've installed KiCAD, let's start on our PCB. Create a new project by
+          going to "File" in the top navigation bar and clicking "New Project". Go to the projects folder and
+          create a new project. I called mine pathfinder (since it's the original), but you should call yours
+          something different.
+        </p>
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b999b89c04c34b12ff11719dc445753625918076_ezgif-89180c8b7ba1ca.gif"
+          style="width:450px;height:300px">
+      </div>
+
+      <div class="image-text-section">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0b2983759a09f63a3fc18f6bd9a1d5d740541ec2_ezgif-8911e89700cb50.gif"
+          style="width:500px;height:300px">
+        <div style="flex-direction: column">
+          <p class="info">Now, open the project's schematic by double-clicking the Schematic Editor.
+          </p>
+          <br>
+          <p class="info"> This is a schematic, which is basically a visual representation of our circuit we're going to
+            put on our PCB. It doesn't matter where you put your components or how it's laid out--a schematic is just
+            for wiring.
+          </p>
+        </div>
+      </div>
+
+      <div class="infoBox">
+        <p class="info" style="padding-top:1rem">We're going to be making my Pathfinder (3 buttons and 3 LEDs), but to
+          make a valid submission, you have to change yours up a bit. Maybe you add another button, a buzzer, or maybe
+          even a KNOB (very cool). If you want any help with these add-ons shoot a message in #electronics or DM me
+          @Meghana!
+        </p>
+      </div>
+      <div></div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column">
+          <p class="info">First, let's add the microcontroller. This is the brains of the operation: it does all
+            the processing, computing, and... controlling. The microcontroller is the funky shaped rectangle you
+            saw on the bottom right of my pathfinder. We're using a XIAO RP2040, which is a small but powerful
+            board. It's pretty simple and easy to use, so it's perfect for us.
+          </p>
+          <br>
+          <p class="info"> A microcontroller is a PCB too! It's got a bunch of components, one of which is a
+            chip (in this case the RP2040 chip), which actually does all the work. Everything else on the
+            microcontroller board is an LED, a button, monitors power, or makes sure the chip doesn't overheat.
+          </p>
+        </div>
+
+        <img src="https://www.newark.com/productimages/large/en_US/55AK3428-40.jpg" style="width:250px;height:300px">
+      </div>
+
+
+      <div class="image-text-section">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/8f50c639819ef3143ca5250e87077e785f447edd_ezgif-5cdd05fd0f319a.gif"
+          style="width:500px;height:300px">
+        <p class="info">
+          You can press "A" on your keyboard and open KiCAD's default symbol library, which has thousands of symbols
+          for parts. But the XIAO RP2040 isn't one of those default symbols, so we have to import it ourselves.
+        </p>
+      </div>
+
+      <div class="image-text-section">
+        <p class="info">Some wonderful person has created and uploaded a KiCAD symbol for the XIAO RP2040
+          <a color="black"
+            href="https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/Seeed_Studio_XIAO_Series.kicad_sym"
+            target="_blank" style="color:#f5c04e">here
+          </a>
+          . Download the raw file and we're ready to import it.
+        </p>
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/ac4d7c7af79d85217eb7ba73674ca293e520dc0d_ezgif-5aa285b415b677.gif"
+          style="width:550px;height:250px">
+      </div>
+
+      <div class="image-text-section">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7d161e8b200ff6d92834d9e4da84a756c1db1fa5_ezgif-3b9f0928c38fe5.gif"
+          style="width:500px;height:300px">
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            Go back to the main KiCAD window (it should still be open), and go to "Preferences" in the top navigation
+            bar.
+            Click "Manage Symbol Libraries" and find the file icon at the bottom of the pop-window that appears.
+          </p>
+          <br>
+          <p class="info">
+            Find the XIAO symbol we just downloaded and click "open". Then, click "OK" in the pop-up window to save.
+          </p>
+          <br>
+          <p class="info">
+            Make sure you click OK, don't just close the window or else it won't save.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column">
+          <p class="info">We've got the XIAO's symbol! Go back to your schematic and hit "A" on your keyboard.
+            It'll bring up the symbol libraries and if you now search for "XIAO RP2040 DIP" the symbol we need should
+            appear. Magic, right?
+          </p>
+          <br>
+          <p class="info"> You may be wondering, "what's a symbol?". Well if a schematic is a visual
+            repesentation of our entire circuit then a symbol is the visual representation of a component. I'll
+            have 3 components for this tutorial: the XIAO, the buttons, and the LEDs.
+          </p>
+          <br>
+          <p class="info">When you place the XIAO, you'll see a bunch of lines sticking out the sides. Those represent
+            "pins", or connection points of that component. (The gold pads you see on the edges of the XIAO are pins)
+          </p>
+        </div>
+
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c4ad7c097c71ee892efc74b86cfefa23a80419a_ezgif-378f93ce2bf580.gif"
+          style="width:500px;height:300px">
+      </div>
+
+      <div class="image-text-section">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/043731ff0427ced75454965d7b31a5f6a9eb56f8_ezgif-8db8014ba8f88b.gif"
+          style="width:550px;height:300px">
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            The next piece of the puzzle we'll add is the buttons. They're easy because their symbol is default.
+            Go to place a symbol (press "A" on your keyboard) and type in "SW PUSH", and it's the first one that
+            shows up.
+          </p>
+          <br>
+          <p class="info">
+            This symbol is insanely simple. It's 2 pins: voltage in and voltage out. That's because that's all a
+            button needs.
+          </p>
+          <br>
+          <p class="info">
+            If you were using a arcade button or even one of those tiny buttons that come in arduino
+            kits you'd use the same symbol--electrically, they're all the same.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column">
+          <p class="info">Next step is the LEDs, which is also a custom symbol.
+          </p>
+          <br>
+          <p class="info">You can find the symbol
+            <a style="color:#f5c04e" target="_blank"
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e390cee6c564169ed6d49fe7a268946ec8897500_l08r5000q1.zip">
+              here
+            </a>
+            . You'll get a .zip file of the LED's symbol, footprint, and 3D model (we'll get to those last 2
+            later). Extract the zip file into your project folder (or wherever you want, personal choice).
+          </p>
+          <br>
+          <p class="info">Follow the same steps as before to import the symbol (Preferences -> Manage Symbol
+            Libraries -> find the file -> OK), and we're good to place 3 LEDs.
+          </p>
+          <br>
+          <p class="info">Search for "L08R5000Q1" (rolls of the tongue, doesn't it?), and donezo.
+          </p>
+        </div>
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e3cc99a3be2be3b3862e4a5c21ec38d7f038c2e3_ezgif-8b1d8c24a22cf8.gif"
+          style="width:500px;height:300px">
+      </div>
+
+      <div class="image-text-section">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/2d443a0929a06895523a51f5e5c98fc0706198a9_ezgif-43f9c55b9560c1.gif"
+          style="width:550px;height:300px">
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            One last component to add: a resistor. We don't want to give 5V straight volts to the LED or else
+            it'll short and be ruined forever.
+          </p>
+          <br>
+          <p class="info">
+            We don't have to do this for the switch, that can operate with 5V.
+          </p>
+          <br>
+          <p class="info">
+            Search for a resistor in the symbol library and connect 1 resistor to the left end of each of your
+            LEDs. Since I have 3 LEDs, I'm placing 3 resistors. You connect components by pressing "W" and wiring
+            their pins together OR by placing their pins on top of each other (see GIF).
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column">
+          <p class="info">
+            Now comes to the fun part: wiring. You can hit "W" click around for a green wire to show up. You can
+            connect pins using wire, OR you can use the less messy and awesome method of global tags.
+          </p>
+          <br>
+          <p class="info">
+            If you make a global tag that says "button1" and connect it to your first button, then make a second,
+            identical tag that has the same name and connect it to a pin on your microcontroller, they're connected.
+          </p>
+          <br>
+          <p class="info">
+            What you just did was exactly the same as connecting those 2 pins with a wire, but less messy. Whenever
+            any global tags have the exact same name (case sensitive) they're connected.
+          </p>
+          <br>
+          <p class="info">Having these tags takes up a lot less space, and I'm sure you can imagine how much
+            easier this makes your schematic to read.
+          </p>
+        </div>
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/2adcf7da4d0c4ccb5d45f27b318fa13a5b350511_ezgif-46fbb277731640.gif"
+          style="width:500px;height:300px">
+      </div>
+
+      <div class="image-text-section">
+        <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/78374fa98e96cac6f758d62cf87d9ddf484e0da5_image.png"
+          style="width:450px;height:350px">
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            Place unique labels for each component and connect each one to a different pin on the XIAO's symbol.
+          </p>
+          <br>
+          <p class="info">
+            Make sure you're only connecting XIAO pins that say GPIO (General Purpose Input/Output), because
+            they're built for inputs (buttons) or outputs (LEDs).
+          </p>
+          <br>
+          <p class="info">
+            5V is a pin that (you guessed it), outputs 5V, 3V3 outputs 3.3V, and GND is ground, which is how
+            the microcontroller deals with all the electrons after they go through your circuit.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column">
+          <p class="info">
+            Last step, we have to connect the right side of every component to GND. That's pretty much the basics
+            of electronics: voltage in on the left and out to ground on the right.
+          </p>
+          <br>
+          <p class="info">
+            You can place GND symbols ("A" on your keyboard) and it acts like a global label. You could actually
+            just make a global label called "ground" (or anything else) and it'd do the same thing.
+          </p>
+          <br>
+          <p class="info">
+            You also have to connect a GND symbol to the GND pin on the XIAO (remember, they're all connected)
+          </p>
+        </div>
+        <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b7796f30b23658ae586b53ebb436fe9ff79ece33_image.png"
+          style="width:350px;height:300px">
+      </div>
+
+      <div class="image-text-section">
+        <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/837da5e3bafd49e9f73af892a2c83af033c28773_image.png"
+          style="width:300px;height:300px">
+
+        <p class="info">
+          When all's said and done, your schematic should look like this.
+        </p>
+      </div>
+
+      <div class="infoBox">
+        <p class="info" style="text-align: center; padding-top:1rem">
+          Congrats! You've officially made a PCB schematic!
+        </p>
+      </div>
+
+      <button class="button" id="nextBtn" onclick="goToPage('step2', 'step3')">next step >></button>
+
     </div>
   </div>
 
   <div id="step3" class="step-page" style="display: none">
     <div class="content-wrapper">
-      <h1>Step 3: Design your PCB</h1>
+      <h1 class="padding-top:1rem">Step 3: Design your PCB</h1>
       <p class="info">Placeholder text for debugging techniques and signal checking. Customize as needed.</p>
-      <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">Back to Map</button>
+      <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
     </div>
   </div>
 
   <div id="step4" class="step-page" style="display: none">
     <div class="content-wrapper">
-      <h1>Step 4: Code your Firmware</h1>
+      <h1 style="padding-top:1rem">Step 4: Code your Firmware</h1>
       <p class="info">Placeholder text for final build verification and deployment. You can add steps here.</p>
-      <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">Back to Map</button>
+      <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
     </div>
   </div>
 

@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: #8c2e37;
+    color: white;
+    text-align: center;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: #f4bf4f;
+    font-family: 'Ubuntu Mono', monospace;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background 0.3s;
+    box-shadow: 0.2rem 0.2rem 0.2rem black;
+}
+
+.button:hover {
+    background-color: #692229;
+}
+
+.treasure-map {
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 800px;
+    height: 60vh;
+    min-height: 400px;
+    margin: 2rem auto;
+    position: relative;
+    border: 5px solid #692229;
+    border-radius: 16px;
+}
+
+.step {
+    width: 5vw;
+    max-width: 40px;
+    height: 5vw;
+    max-height: 40px;
+    background-color: #f4bf4f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.info-box {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 10rem;
+    display: none;
+    color: #faffdc;
+    margin: 0 auto;
+}
+
+.active .info-box {
+    display: block;
+}
+
+#backBtn {
+    position: fixed;
+    top: 0rem;
+    right: 2rem;
+    z-index: 2;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+#nextBtn {
+    background-color: #98d3eb;
+    margin-bottom: 1rem;
+    right: 6rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    float: right;
+}
+
+#mapPage {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: relative;
+    background-size: cover;
+    background-position: cover;
+    background-image: url(pathfinderbg.png);
+    padding: 2rem;
+}
+
+.step-page {
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .info-box {
+        width: 80%;
+    }
+
+    .step {
+        width: 30px;
+        height: 30px;
+    }
+
+    #backBtn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+.subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.info {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    
+}
+
+.title {
+    margin: auto;
+    z-index: 2;
+    color: black;
+}
+
+.stepContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.titleContainer {
+    vertical-align: middle;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-text-section {
+    display: flex;
+    align-items: flex-start;
+    margin: 2rem -8.5rem;
+    gap: 2rem;
+    padding: 2rem 8.5rem;
+}
+
+.image-text-section img {
+    flex-shrink: 0;
+    box-shadow: 0.5rem 0.5rem black;
+}
+
+.image-text-section p {
+    flex: 1;
+    margin: 0;
+}
+
+.image-text-section:nth-child(odd) {
+    background-color: #692129;
+}
+
+.image-text-section:nth-child(even) .info {
+    background-color: #241f1f;
+    padding: 1rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-text-section img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 400px;
+    }
+}
+
+.infoBox {
+    background-color: #f4bf4f;
+    border-radius: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+
+}
