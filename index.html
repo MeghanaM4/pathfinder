@@ -38,7 +38,7 @@
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 58%; left: 88%;" onclick="goToPage('mapPage', 'step3')">
+      <div id="step3Dot" class="stepContainer" style="top: 58%; left: 88%;" onclick="goToPage('mapPage', 'step3')">
         <div class="titleContainer">
           <h3 class="title">design PCB</h3>
         </div>
@@ -65,10 +65,8 @@
       <div class="image-text-section">
         <p class="info">Alright, to design your PCB we're going to use a software called KiCAD. Download KiCAD
           at
-          <a color="black" href="https://www.kicad.org/download/" target="_blank"
-            style="color:#f5c04e">kicad.org/download
-          </a>
-          . You'll see something like this:
+          <a href="https://www.kicad.org/download/" target="_blank" style="color:#f5c04e">kicad.org/download</a>. You'll
+          see something like this:
         </p>
         <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e43fb5e0b9783db9c6c81ad78589857dcf622187_image.png"
           style="width:500px;height:250px;">
@@ -94,9 +92,10 @@
       </div>
 
       <p class="info">If your screen looks like this, you're all set for the next step!</p>
-
-      <button class="button" id="nextBtn" onclick="goToPage('step1', 'step2')">next step >></button>
     </div>
+
+        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step2', 'step3')">next step
+          >></button>
   </div>
 
   <div id="step2" class="step-page" style="display: none">
@@ -155,6 +154,8 @@
         </div>
 
         <img src="https://www.newark.com/productimages/large/en_US/55AK3428-40.jpg" style="width:250px;height:300px">
+
+        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step1', 'step2')">next step >></button>
       </div>
 
 
@@ -172,9 +173,7 @@
         <p class="info">Some wonderful person has created and uploaded a KiCAD symbol for the XIAO RP2040
           <a color="black"
             href="https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/Seeed_Studio_XIAO_Series.kicad_sym"
-            target="_blank" style="color:#f5c04e">here
-          </a>
-          . Download the raw file and we're ready to import it.
+            target="_blank" style="color:#f5c04e">here</a>. Download the raw file and we're ready to import it.
         </p>
         <img
           src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/ac4d7c7af79d85217eb7ba73674ca293e520dc0d_ezgif-5aa285b415b677.gif"
@@ -256,10 +255,8 @@
           <br>
           <p class="info">You can find the symbol
             <a style="color:#f5c04e" target="_blank"
-              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e390cee6c564169ed6d49fe7a268946ec8897500_l08r5000q1.zip">
-              here
-            </a>
-            . You'll get a .zip file of the LED's symbol, footprint, and 3D model (we'll get to those last 2
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e390cee6c564169ed6d49fe7a268946ec8897500_l08r5000q1.zip">here</a>.
+            You'll get a .zip file of the LED's symbol, footprint, and 3D model (we'll get to those last 2
             later). Extract the zip file into your project folder (or wherever you want, personal choice).
           </p>
           <br>
@@ -380,32 +377,127 @@
         </p>
       </div>
 
-      <button class="button" id="nextBtn" onclick="goToPage('step2', 'step3')">next step >></button>
-
     </div>
+    <button class="button" style="margin-right:1rem;" id="nextBtn" onclick="goToPage('step2', 'step3')">next step
+      >></button>
   </div>
 
+
+
   <div id="step3" class="step-page" style="display: none">
+    <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
+
     <div class="content-wrapper">
-      <h1 class="padding-top:1rem">Step 3: Design your PCB</h1>
-      <p class="info">Placeholder text for debugging techniques and signal checking. Customize as needed.</p>
-      <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
+
+      <h1 style="padding-top:2rem">Step 3: Design your PCB</h1>
+
+      <div></div>
+
+      <div class="image-text-section">
+        <img style="width: 500px; height: 200px;"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3de645aa82d77fc383f87704a1141b3d72472d0e_image.png">
+
+        <div style="flex-direction: column;">
+
+          <p class="info">Since the XIAO we're using isn't one of KiCAD's default parts, we have to download the
+            XIAO's footprint and import it. The same wonderful person has uploaded the footprint to GitHub. Follow
+            <a style="color:#f5c04e"
+              href="https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/XIAO-RP2040-DIP.kicad_mod">
+              this</a>
+            link and download the raw file. Find the KiCAD folder on your computer and go to the "footprints"
+            subfolder. Move the file there.
+          </p>
+          <br>
+          <p class="info">
+            A footprint is what the component will look like on the actual PCB. The way you arranged your schematic
+            has no effect on the actual PCB, but the way you make your PCB in the PCB Editor is exactly how it will
+            show up when it goes to get printed.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column;">
+          <p class="info">
+            Next, we have to import the footprint just like we imported the symbol. Go to the main KiCAD window,
+            click "Preferences" in the top nav bar, then click "Manage Footprint Libraries". A pop up window similar
+            to the symbol libraries will show up, and click the file icon at the bottom to import a custom footprint.
+          </p>
+          <br>
+          <p class="info">
+            Now, select the FOLDER where the XIAO's footprint is. You should've moved the XIAO's footprint file to the
+            footprint folder that KiCAD has, so select that one. Every footprint in your "Footprints" folder will
+            be included in your footprint libraries.
+          </p>
+        </div>
+        <img style="width: 550px; height: 300px;"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4e097dd8b0631bdac4d97e49acece988b683ff51_ezgif-1837c71198852d.gif">
+      </div>
+
+      <div class="image-text-section">
+        <img style="width: 500px; height: 200px;"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/a69d5e147361f7fc6b8b15f2b58096154df83c44_image.png">
+        <div style="flex-direction: column;">
+
+          <p class="info">We also have to add the footprint of the LED (which you already downloaded
+            <a href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e390cee6c564169ed6d49fe7a268946ec8897500_l08r5000q1.zip"
+              target="_blank" style="color:#f5c04e">here</a>) Move the footprint you extracted into KiCAD's "Footprints"
+            folder too.
+          </p>
+          <br>
+          <p class="info">
+            Your "Footprints" folder should have these 2 files in it.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column;">
+          <p class="info">
+            Next, we gotta assign footprints to our symbols. KiCAD knows what components you're using electrically, but
+            it doesn't know
+            the exact part. The symbol for all buttons is the same, but since a tiny Arduino button is physically
+            different than an arcade-style
+            button, we have to led KiCAD know what's actually goint to show up on our PCB.
+          </p>
+          <br>
+          <p class="info">
+            This video will go through assigning your footprints.
+          </p>
+        </div>
+        <img style="width: 550px; height: 300px;" src="">
+      </div>
+
+      <div class="infoBox">
+        <p class="info">This video'll teach you all about PCB routing and how you can polish off your PCB</p>
+        <p>stay till the end for a super sick outro</p>
+        <iframe width="420px" style="margin-top:1rem; border-color: #8c2e37; border-width: 0.5rem;" height="315px"
+          src="https://www.youtube.com/embed/MFTP7uMzt1s">
+        </iframe>
+      </div>
+
+
+
     </div>
+    <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step3', 'step2')">
+      << prev step</button>
+        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step3', 'step4')">next step
+          >></button>
   </div>
 
   <div id="step4" class="step-page" style="display: none">
     <div class="content-wrapper">
-      <h1 style="padding-top:1rem">Step 4: Code your Firmware</h1>
+      <h1 style="padding-top:2rem">Step 4: Code your Firmware</h1>
       <p class="info">Placeholder text for final build verification and deployment. You can add steps here.</p>
       <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
+
+      <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step4', 'step3')">
+        << prev step</button>
     </div>
   </div>
 
   <script>
-    function goToMap() {
-      document.getElementById('mainPage').style.display = 'none';
-      document.getElementById('mapPage').style.display = 'block';
-    }
 
     const allPages = ['mainPage', 'mapPage', 'step1', 'step2', 'step3', 'step4'];
 

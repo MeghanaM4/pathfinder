@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "f1cb4de3-b8b1-4574-8929-c87059d9860d")
 	(paper "A4")
+	(title_block
+		(title "Pathfinder")
+		(date "6/24/2025")
+		(rev "6/26/2025")
+		(company "Hack Club")
+	)
 	(lib_symbols
 		(symbol "Device:R"
 			(pin_numbers
@@ -1791,7 +1797,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 82.55 66.675 0)
 			(effects
 				(font
@@ -1927,7 +1933,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 89.662 90.805 90)
 			(effects
 				(font
@@ -2063,7 +2069,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 127.762 90.805 90)
 			(effects
 				(font
@@ -2133,7 +2139,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 109.347 90.805 90)
 			(effects
 				(font
@@ -2201,7 +2207,7 @@
 				)
 			)
 		)
-		(property "Footprint" "L08R5000Q1:LEDRD254W57D500H1070"
+		(property "Footprint" "footprints:LEDRD254W57D500H1070"
 			(at 137.16 86.995 0)
 			(effects
 				(font
@@ -2456,7 +2462,7 @@
 				)
 			)
 		)
-		(property "Footprint" "L08R5000Q1:LEDRD254W57D500H1070"
+		(property "Footprint" "footprints:LEDRD254W57D500H1070"
 			(at 99.06 86.995 0)
 			(effects
 				(font
@@ -2645,7 +2651,7 @@
 				)
 			)
 		)
-		(property "Footprint" "L08R5000Q1:LEDRD254W57D500H1070"
+		(property "Footprint" "footprints:LEDRD254W57D500H1070"
 			(at 118.745 86.995 0)
 			(effects
 				(font
@@ -2900,7 +2906,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 109.855 66.04 0)
 			(effects
 				(font
@@ -3100,7 +3106,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 136.525 66.675 0)
 			(effects
 				(font
@@ -3234,7 +3240,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Module:MOUDLE14P-XIAO-DIP-SMD"
+		(property "Footprint" "footprints:XIAO-RP2040-DIP"
 			(at 112.268 136.398 0)
 			(effects
 				(font

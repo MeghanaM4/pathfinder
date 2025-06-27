@@ -6,8 +6,10 @@
 
 html,
 body {
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -15,14 +17,17 @@ body {
     background-color: #8c2e37;
     color: white;
     text-align: center;
+    position: relative;
 }
 
 .page {
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .button {
@@ -88,7 +93,7 @@ body {
 
 #backBtn {
     position: fixed;
-    top: 0rem;
+    top: 1rem;
     right: 2rem;
     z-index: 2;
     padding: 0.8rem 1rem;
@@ -104,23 +109,77 @@ body {
     float: right;
 }
 
+#prevBtn {
+    background-color: #98d3eb;
+    margin-bottom: 1rem;
+    left: 6rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    float: left;
+}
+
 #mapPage {
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     display: none;
     position: relative;
     background-size: cover;
-    background-position: cover;
-    background-image: url(pathfinderbg.png);
+    background-position: center;
+    background-color: #8c2e38;
     padding: 2rem;
+    overflow: hidden;
 }
 
 .step-page {
     min-height: 100vh;
+    min-height: 100dvh;
     overflow-y: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #mapPage {
+        background-image: url(pathfinderbg.png);
+    }
 }
 
 @media (max-width: 768px) {
+
+    html,
+    body {
+        height: 100vh;
+        height: 100dvh;
+        width: 100%;
+    }
+
+    .page {
+        height: 100vh;
+        height: 100dvh;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #mapPage {
+        height: 100vh;
+        height: 100dvh;
+        width: 100%;
+        display: none;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-color: #8c2e37;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    #backBtn {
+        top: 3rem;
+        right: 1rem;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
     .info-box {
         width: 80%;
     }
@@ -130,9 +189,23 @@ body {
         height: 30px;
     }
 
-    #backBtn {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .image-text-section {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .image-text-section img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 350px;
     }
 }
 
@@ -147,7 +220,6 @@ body {
     text-align: left;
     padding: 1rem 1rem;
     border-radius: 0.5rem;
-    
 }
 
 .title {
@@ -181,9 +253,9 @@ body {
 .image-text-section {
     display: flex;
     align-items: flex-start;
-    margin: 2rem -8.5rem;
+    margin: 2rem -8.2rem;
     gap: 2rem;
-    padding: 2rem 8.5rem;
+    padding: 2rem 8.2rem;
 }
 
 .image-text-section img {
@@ -205,24 +277,27 @@ body {
     padding: 1rem 1rem;
 }
 
-@media (max-width: 768px) {
-    .image-text-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-text-section img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 400px;
-    }
-}
-
 .infoBox {
     background-color: #f4bf4f;
     border-radius: 1rem;
     padding-right: 1rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
+}
 
+@media (max-width: 768px) {
+    .image-text-section {
+        margin: 1rem 0 !important;
+        padding: 1rem !important;
+    }
+
+    .info {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
 }
