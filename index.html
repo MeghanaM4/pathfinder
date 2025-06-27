@@ -31,7 +31,7 @@
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 41%; left:45%;" onclick="goToPage('mapPage', 'step2')">
+      <div class="stepContainer" style="top: 40%; left:45%;" onclick="goToPage('mapPage', 'step2')">
         <div class="titleContainer">
           <h3 class="title">make schematic</h3>
         </div>
@@ -45,9 +45,16 @@
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 82%; left: 24%;" onclick="goToPage('mapPage', 'step4')">
+      <div class="stepContainer" style="top: 84%; left: 29%;" onclick="goToPage('mapPage', 'step4')">
         <div class="titleContainer">
           <h3 class="title">code firmware</h3>
+        </div>
+        <div class="step"></div>
+      </div>
+
+      <div class="stepContainer" style="top: 12%; left: 7%;" onclick="window.open(, '_blank')">
+        <div class="titleContainer">
+          <h3 class="title">submit</h3>
         </div>
         <div class="step"></div>
       </div>
@@ -581,7 +588,7 @@
             <span class="color-1">setup</span><span>() {</span>
           </p>
 
-          <p class="property" style="margin-left: 30px;">
+          <div class="property">
             <p><span class="color-1">pinMode</span><span>(BUT1, INPUT);</span></p>
             <p><span class="color-1">pinMode</span><span>(BUT2, INPUT);</span></p>
             <p><span class="color-1">pinMode</span><span>(BUT3, INPUT);</span></p>
@@ -590,10 +597,13 @@
             <p><span class="color-1">pinMode</span><span>(LED2, OUTPUT);</span></p>
             <p><span class="color-1">pinMode</span><span>(LED3, OUTPUT);</span></p>
             <br>
+            
             <p><span class="color-0">long </span> <span>startTime = </span> <span class="color-1">millis</span><span>();</span></p>
-            <p><span>}</span></p>
+          </div>
+
+          <p><span>}</span></p>
             <br>
-          </p>
+          
           </code>
           </div>
 
@@ -645,7 +655,8 @@
           <span class="color-0">void </span>
           <span class="color-1">loop</span><span>() {</span>
         </p>
-        <p class="property">
+
+        <div class="property">
           <span class="color-0">long </span><span>but1time;</span>
         </p>
         <p class="property">
@@ -653,7 +664,8 @@
         </p>
         <p class="property">
           <span class="color-0">long </span><span>but3time = </span><span class="color-3">0</span><span>;</span>
-        </p>
+        </div>
+
       </code>
           </div>
         </div>
@@ -681,11 +693,11 @@
           <span>(</span><span class="color-1">digitalRead</span><span>(BUT1) == HIGH) {</span>
         </p>
 
-        <p class="property">
+        <div class="property">
           <span>but1time = </span>
           <span class="color-1">millis</span><span>();</span>
           <span class="color-1">digitalWrite</span><span>(LED1, HIGH);</span>
-        </p>
+        </div>
 
         <p>
           <span>} </span>
@@ -693,10 +705,10 @@
           <span>{</span>
         </p>
 
-        <p class="property">
+        <div class="property">
           <span class="color-1">digitalWrite</span><span>(LED1, LOW);</span>
         </p>
-        <p><span>}</span></p>
+      </div><span>}</span></p>
 
       </code>
           </div>
@@ -744,10 +756,10 @@
           <span>(BUT2) == HIGH) {</span>
         </p>
 
-        <p class="property">
+        <div class="property">
           <span>but2time = </span>
           <span class="color-1">millis</span><span>();</span>
-        </p>
+        </div>
 
         <p><span>}</span></p>
       </code>
@@ -833,19 +845,23 @@
           <span class="color-2">if </span><span>(</span><span class="color-1">digitalRead</span>
           <span>(BUT3) == HIGH) {</span>
         </p>
-        <p class="property">
+
+        <div class="property">
           <span>but3time++;</span>
-        </p>
+        </div>
+
         <p>
           <span>} </span>
           <span class="color-2">else </span>
           <span>{</span>
         </p>
-        <p class="property">
+
+        <div class="property">
           <span>but3time = </span>
           <span class="color-3">0</span>
           <span>;</span>
-        </p>
+        </div>
+
         <p><span>}</span></p>
       </code>
           </div>
@@ -875,19 +891,23 @@
           <span class="color-3">800</span>
           <span>) {</span>
         </p>
-        <p class="property">
+
+        <div class="property">
           <span class="color-1">digitalWrite</span>
           <span>(LED3, HIGH);</span>
-        </p>
+        </div>
+        
         <p>
           <span>} </span>
           <span class="color-2">else </span>
           <span>{</span>
         </p>
-        <p class="property">
+
+        <div class="property">
           <span class="color-1">digitalWrite</span>
           <span>(LED3, LOW);</span>
-        </p>
+        </div>
+
         <p><span>}</span></p>
         <br>
         <p><span>}</span></p>
