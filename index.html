@@ -94,8 +94,8 @@
       <p class="info">If your screen looks like this, you're all set for the next step!</p>
     </div>
 
-        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step2', 'step3')">next step
-          >></button>
+    <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step2', 'step3')">next step
+      >></button>
   </div>
 
   <div id="step2" class="step-page" style="display: none">
@@ -155,7 +155,8 @@
 
         <img src="https://www.newark.com/productimages/large/en_US/55AK3428-40.jpg" style="width:250px;height:300px">
 
-        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step1', 'step2')">next step >></button>
+        <button class="button" id="nextBtn" style="margin-right: 1rem;" onclick="goToPage('step1', 'step2')">next step
+          >></button>
       </div>
 
 
@@ -401,7 +402,7 @@
 
           <p class="info">Since the XIAO we're using isn't one of KiCAD's default parts, we have to download the
             XIAO's footprint and import it. The same wonderful person has uploaded the footprint to GitHub. Follow
-            <a style="color:#f5c04e"
+            <a style="color:#f5c04e" target="_blank"
               href="https://github.com/Seeed-Studio/OPL_Kicad_Library/blob/master/Seeed%20Studio%20XIAO%20Series%20Library/XIAO-RP2040-DIP.kicad_mod">
               this</a>
             link and download the raw file. Find the KiCAD folder on your computer and go to the "footprints"
@@ -472,7 +473,7 @@
       <div class="infoBox">
         <p class="info">This video'll teach you all about PCB routing and how you can polish off your PCB</p>
         <p>stay till the end for a super sick outro</p>
-        <iframe width="420px" style="margin-top:1rem; border-color: #8c2e37; border-width: 0.5rem;" height="315px"
+        <iframe width="420px" style="margin-top:1rem; border-color: #8c2e37; border-width: 0.5rem;" target="_blank" height="315px"
           src="https://www.youtube.com/embed/MFTP7uMzt1s">
         </iframe>
       </div>
@@ -489,12 +490,420 @@
   <div id="step4" class="step-page" style="display: none">
     <div class="content-wrapper">
       <h1 style="padding-top:2rem">Step 4: Code your Firmware</h1>
-      <p class="info">Placeholder text for final build verification and deployment. You can add steps here.</p>
       <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
 
-      <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step4', 'step3')">
-        << prev step</button>
+
+      <div class="infoBox" style="flex-direction: column;">
+        <p class="info">
+          You're nearing the last leg. It's now time to code your firmware. We'll be coding in C++, specifically in Arduino code. To be
+          able to compile and flash your code onto your PCB, download the 
+          <a href="https://www.arduino.cc/en/software/" target="_blank" style="color:#8c2e37;">Arduino IDE</a> and use
+          <a href="https://wiki.seeedstudio.com/XIAO-RP2040-with-Arduino/" target="_blank" style="color:#8c2e37">this guide</a> to add your XIAO RP2040
+          board to it.
+        </p>
+
+        <p class="info">
+          You can set up Arduino Hackatime
+          <a href="https://wakatime.com/arduino-ide" target="_blank" style="color:#8c2e37">here</a>, and use it to track your time.
+        </p>
+
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column;">
+          <p class="info">
+            This assigns pin numbers for all the components.
+          </p>
+          <br>
+          <p class="info">
+            These numbers probably won't work for you, so make sure to
+            check the XIAO
+            RP2040's pinout and your PCB editor to find which pins your LEDs and buttons are connected to.
+          </p>
+
+        </div>
+
+        <!-- From Uiverse.io by Yaya12085 -->
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+
+          </div>
+          <div class="editor-content">
+            <code class="code">
+          <p><span class="color-0">int </span> <span>BUT1 = D0;</span></p>
+          <p><span class="color-0">int </span> <span>BUT2 = D1;</span></p>
+          <p><span class="color-0">int </span> <span>BUT3 = D2;</span></p>
+
+          <br>
+
+          <p><span class="color-0">int </span> <span>LED1 = D3;</span></p>
+          <p><span class="color-0">int </span> <span>LED2 = D4;</span></p>
+          <p><span class="color-0">int </span> <span>LED3 = D5;</span></p>
+        </code>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="image-text-section">
+
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+
+          </div>
+
+          <div class="editor-content">
+            <code class="code">
+          <p>
+            <span class="color-0">void </span>
+            <span class="color-1">setup</span><span>() {</span>
+          </p>
+
+          <p class="property" style="margin-left: 30px;">
+            <p><span class="color-1">pinMode</span><span>(BUT1, INPUT);</span></p>
+            <p><span class="color-1">pinMode</span><span>(BUT2, INPUT);</span></p>
+            <p><span class="color-1">pinMode</span><span>(BUT3, INPUT);</span></p>
+            <br>
+            <p><span class="color-1">pinMode</span><span>(LED1, OUTPUT);</span></p>
+            <p><span class="color-1">pinMode</span><span>(LED2, OUTPUT);</span></p>
+            <p><span class="color-1">pinMode</span><span>(LED3, OUTPUT);</span></p>
+            <br>
+            <p><span class="color-0">long </span> <span>startTime = </span> <span class="color-1">millis</span><span>();</span></p>
+            <p><span>}</span></p>
+            <br>
+          </p>
+          </code>
+          </div>
+
+        </div>
+
+        <div style="flex-direction: column;">
+          <p class="info">This is so Arduino know to set internal pull-up resistors correctly</p>
+          <br>
+          <p class="info">Buttons are inputs (user does an action)</p>
+          <br>
+          <p class="info">LEDs are outputs (result of action)</p>
+          <br>
+          <p class="info">We're also logging official start time (optional)</p>
+        </div>
+
+      </div>
+
+      <div class="infoBox">
+        <p class="info" style="text-align: center;">
+          Remember: this is a tutorial of MY firmware. To be a valid submission, you must make your own. Try and play around with different 
+          secret controls and timings. Maybe you could add a secret clock hidden in the LED blinks, maybe your LEDs spout morse code 
+          according to specific button taps, who knows.
+        </p>
+
+      </div>
+
+      <!-- Code Block 3: Loop function declaration and variable initialization -->
+      <div class="image-text-section">
+        <p class="info">
+          Initializing time variables.
+        </p>
+
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+        <p>
+          <span class="color-0">void </span>
+          <span class="color-1">loop</span><span>() {</span>
+        </p>
+        <p class="property">
+          <span class="color-0">long </span><span>but1time;</span>
+        </p>
+        <p class="property">
+          <span class="color-0">long </span><span>but2time;</span>
+        </p>
+        <p class="property">
+          <span class="color-0">long </span><span>but3time = </span><span class="color-3">0</span><span>;</span>
+        </p>
+      </code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Block 4: Button 1 logic -->
+      <div class="image-text-section">
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+        <p>
+          <span class="color-2">if</span>
+          <span>(</span><span class="color-1">digitalRead</span><span>(BUT1) == HIGH) {</span>
+        </p>
+
+        <p class="property">
+          <span>but1time = </span>
+          <span class="color-1">millis</span><span>();</span>
+          <span class="color-1">digitalWrite</span><span>(LED1, HIGH);</span>
+        </p>
+
+        <p>
+          <span>} </span>
+          <span class="color-2">else </span>
+          <span>{</span>
+        </p>
+
+        <p class="property">
+          <span class="color-1">digitalWrite</span><span>(LED1, LOW);</span>
+        </p>
+        <p><span>}</span></p>
+
+      </code>
+          </div>
+        </div>
+        <div style="flex-direction: column;">
+          <p class="info">
+            This code block says "if button 1 is pressed then turn on LED 1"
+          </p>
+          <br>
+          <p class="info">
+            It also logs the time at which button 1 was pressed (millis())
+          </p>
+          <br>
+          <p class="info">
+            Buttons and LEDs are digital components, so that's why it's digitalRead and digitalWrite.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Block 5: Button 2 logic -->
+      <div class="image-text-section">
+        <p class="info">
+          Logs time that button 2 was pressed.
+        </p>
+
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+
+        <p>
+          <span class="color-2">if </span>
+          <span>(</span><span class="color-1">digitalRead</span>
+          <span>(BUT2) == HIGH) {</span>
+        </p>
+
+        <p class="property">
+          <span>but2time = </span>
+          <span class="color-1">millis</span><span>();</span>
+        </p>
+
+        <p><span>}</span></p>
+      </code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Block 6: Two-button timing logic -->
+      <div class="image-text-section">
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+        <p>
+          <span class="color-2">if </span><span>(</span><span class="color-1">abs</span><span>(but2time - but1time) <= </span><span class="color-3">2000</span><span>) {</span>
+        </p>
+        <p class="property">
+          <span class="color-1">digitalWrite</span><span>(LED2, HIGH);</span>
+        </p>
+        <p>
+          <span>} </span>
+          <span class="color-2">else </span>
+          <span>{</span>
+        </p>
+        <p class="property">
+          <span class="color-1">digitalWrite</span><span>(LED2, LOW);</span>
+        </p>
+        <p><span>}</span></p>
+      </code>
+          </div>
+        </div>
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            If button 1 and button 2 were pressed within 2 seconds of each other, then LED 2 lights up.
+          </p>
+          <br>
+          <p class="info">
+            The else makes sure LED 2 turns off when the time exceeds 2000ms
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Block 7: Button 3 hold timer logic -->
+      <div class="image-text-section">
+        <div style="flex-direction: column;">
+          <p class="info">
+            This keeps track of how long button 3 has been pressed by adding 1 every time a loop goes by.
+          </p>
+          <br>
+          <p class="info">
+            If it's not pressed, then it sets the button 3 time back to 0
+          </p>
+        </div>
+
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+        <p>
+          <span class="color-2">if </span><span>(</span><span class="color-1">digitalRead</span>
+          <span>(BUT3) == HIGH) {</span>
+        </p>
+        <p class="property">
+          <span>but3time++;</span>
+        </p>
+        <p>
+          <span>} </span>
+          <span class="color-2">else </span>
+          <span>{</span>
+        </p>
+        <p class="property">
+          <span>but3time = </span>
+          <span class="color-3">0</span>
+          <span>;</span>
+        </p>
+        <p><span>}</span></p>
+      </code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Block 8: Button 3 threshold and loop end -->
+      <div class="image-text-section">
+        <div class="code-editor">
+          <div class="header">
+            <span class="titleCode">pathfinder.ino</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"
+              onclick="goToPage('step4', 'mapPage')">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path stroke-linecape="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="editor-content">
+            <code class="code">
+        <p>
+          <span class="color-2">if </span>
+          <span>(but3time >= </span>
+          <span class="color-3">800</span>
+          <span>) {</span>
+        </p>
+        <p class="property">
+          <span class="color-1">digitalWrite</span>
+          <span>(LED3, HIGH);</span>
+        </p>
+        <p>
+          <span>} </span>
+          <span class="color-2">else </span>
+          <span>{</span>
+        </p>
+        <p class="property">
+          <span class="color-1">digitalWrite</span>
+          <span>(LED3, LOW);</span>
+        </p>
+        <p><span>}</span></p>
+        <br>
+        <p><span>}</span></p>
+      </code>
+          </div>
+        </div>
+        <p class="info">
+          If button 3 is pressed for more than 800 loops then turn LED3 on
+        </p>
+      </div>
+
     </div>
+
+    <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step4', 'step3')">
+      << prev step</button>
+  </div>
   </div>
 
   <script>
