@@ -1,2 +1,2 @@
 # pathfinder
-a simple PCB that shows the basics of microcontrollers
+make a custom PCB controller board and efidget
