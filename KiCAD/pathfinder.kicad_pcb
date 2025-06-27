@@ -102,7 +102,7 @@
 		(property "Reference" "LED2"
 			(at -3.5 3 0)
 			(layer "F.SilkS")
-			(uuid "8991c9dc-0252-4417-ae44-f27cedd36988")
+			(uuid "e6f35985-8152-4743-b354-14e0142d4e3b")
 			(effects
 				(font
 					(face "Courier New")
@@ -193,7 +193,7 @@
 			(at 0.07 3.875 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "18330b38-2342-4c75-8268-6286ccb3a1e0")
+			(uuid "8fcb63d1-e26d-4da5-8360-228287f16e3e")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -205,7 +205,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "03bf2203-aa28-4334-a6bb-6687a2b6ebce")
+			(uuid "198315e5-e6fb-4a88-8ae8-5a50804c20c8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -217,7 +217,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d227deb2-507b-450c-80ad-23b75081a340")
+			(uuid "36a2eab1-e705-475b-9146-6b82402170d3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -482,7 +482,7 @@
 			(uuid "238a4f2d-e4e1-42e1-9c51-3bd6286badc2")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libs/steps/Blue_LED_5mm_STEP.STEP"
+		(model "${KIPRJMOD}/libs/steps/L08R5000Q1.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -490,7 +490,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz -90 -0 -180)
+				(xyz -90 -0 -0)
 			)
 		)
 	)
@@ -1156,7 +1156,7 @@
 			(net 8 "button1")
 			(pinfunction "GPIO26/ADC0/A0")
 			(pintype "passive")
-			(uuid "f28bbc64-47a6-48de-a128-cb1a9b7808fe")
+			(uuid "1e056e91-bacf-4c1d-8149-bdeee428ed70")
 		)
 		(pad "2" smd roundrect
 			(at -8.455 -5.08 90)
@@ -1178,7 +1178,7 @@
 			(net 9 "button2")
 			(pinfunction "GPIO27/ADC1/A1")
 			(pintype "passive")
-			(uuid "f2cfc136-cdc1-4928-8b67-19cf9be2e1f0")
+			(uuid "2679a49c-db38-4675-bfef-ab7009b0e895")
 		)
 		(pad "3" smd roundrect
 			(at -8.455 -2.54 90)
@@ -1200,7 +1200,7 @@
 			(net 10 "button3")
 			(pinfunction "GPIO28/ADC2/A2")
 			(pintype "passive")
-			(uuid "4df65e88-2496-455a-9513-ce7eba1182cb")
+			(uuid "5568edec-644e-45ca-826a-531fc3193f04")
 		)
 		(pad "4" smd roundrect
 			(at -8.455 0 90)
@@ -1222,7 +1222,7 @@
 			(net 5 "LED1")
 			(pinfunction "GPIO29/ADC3/A3")
 			(pintype "passive")
-			(uuid "4810ea78-479c-4c9d-85b5-87df2173fa14")
+			(uuid "49aa880f-a9af-4c9a-8ba4-d23e8b5ac399")
 		)
 		(pad "5" smd roundrect
 			(at -8.455 2.54 90)
@@ -1244,7 +1244,7 @@
 			(net 6 "LED2")
 			(pinfunction "GPIO6/SDA")
 			(pintype "passive")
-			(uuid "aec2bf9e-42c5-43c2-b20c-f92a0ac4a252")
+			(uuid "828716f0-c91e-40b8-b62f-178cd3241746")
 		)
 		(pad "6" smd roundrect
 			(at -8.455 5.08 90)
@@ -1266,7 +1266,7 @@
 			(net 7 "LED3")
 			(pinfunction "GPIO7/SCL")
 			(pintype "passive")
-			(uuid "1ce92492-dcc6-4e59-b7dc-7e40f5541d52")
+			(uuid "56e8830a-d6e5-446b-8088-e4135799a3b6")
 		)
 		(pad "7" smd roundrect
 			(at -8.455 7.62 90)
@@ -1288,7 +1288,7 @@
 			(net 11 "unconnected-(U1-GPIO0{slash}TX-Pad7)")
 			(pinfunction "GPIO0/TX")
 			(pintype "passive")
-			(uuid "3c2273fd-70a4-4d85-8e4d-73b3da781b1e")
+			(uuid "341d1495-af4d-4512-9e9e-77ba3db92a7f")
 		)
 		(pad "8" thru_hole circle
 			(at 7.62 7.62 270)
@@ -1310,7 +1310,7 @@
 			(pinfunction "GPIO1/RX")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "76a3a0d8-c834-4d91-9801-7d15da8bbda6")
+			(uuid "d546ac37-7745-41ba-b906-88f4530b1681")
 		)
 		(pad "9" thru_hole circle
 			(at 7.62 5.08 270)
@@ -1332,7 +1332,7 @@
 			(pinfunction "GPIO2/SCK")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "f8a00111-66a7-46c7-8ab0-590a3f0c37e4")
+			(uuid "c4843082-21c7-48e2-a229-204aceb8c477")
 		)
 		(pad "10" thru_hole circle
 			(at 7.62 2.54 270)
@@ -1354,7 +1354,7 @@
 			(pinfunction "GPIO4/MISO")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "5a833792-62b9-47f2-93db-3cf655e7459d")
+			(uuid "a29dba52-1e66-4948-88c8-1dd9ef0f05cc")
 		)
 		(pad "11" thru_hole circle
 			(at 7.62 0 270)
@@ -1376,7 +1376,7 @@
 			(pinfunction "GPIO3/MOSI")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "938cdc9c-bca4-4f27-991b-2501ccbc6a14")
+			(uuid "ce56cbc0-f512-4a70-8bc5-c28414dfc6c4")
 		)
 		(pad "12" thru_hole circle
 			(at 7.62 -2.54 270)
@@ -1398,7 +1398,7 @@
 			(pinfunction "3V3")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "6611b050-d608-47f9-be27-adc418add56b")
+			(uuid "1386c8b6-38b9-43c8-8705-b58a1a8d4265")
 		)
 		(pad "13" thru_hole circle
 			(at 7.62 -5.08 270)
@@ -1420,7 +1420,7 @@
 			(pinfunction "GND")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "c6eed08b-b777-453f-8b47-e7081a171486")
+			(uuid "53a97861-97c5-4273-b939-b86440c3af4f")
 		)
 		(pad "14" thru_hole circle
 			(at 7.62 -7.62 270)
@@ -1442,7 +1442,7 @@
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "999c7fac-f7c9-435e-9a9f-510e6a697644")
+			(uuid "4f110a47-13e6-4d79-b03e-26be01a9a71c")
 		)
 		(embedded_fonts no)
 		(model "${AMZPATH}/3dmodels/AMz3D.3dshapes/XIAO-nRF52840 v15.step"
@@ -1749,7 +1749,7 @@
 		(property "Reference" "SW2"
 			(at -2.54 -2.794 0)
 			(layer "F.SilkS")
-			(uuid "4b51ba83-00dd-4b0f-a8a4-b293c3228d50")
+			(uuid "a20fadcd-5fa8-4fd6-a8b9-4bd6af093988")
 			(effects
 				(font
 					(size 1 1)
@@ -1760,7 +1760,7 @@
 		(property "Value" "SW_Push"
 			(at -2.54 12.954 0)
 			(layer "F.Fab")
-			(uuid "e2887e72-42bc-4f0f-9766-d3b4290a5483")
+			(uuid "aa2f344b-d998-43be-8df1-62e665aff4d8")
 			(effects
 				(font
 					(size 1 1)
@@ -1773,7 +1773,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1516dfd4-10b5-4f89-90cb-b61569a236a8")
+			(uuid "0a9b3f13-1254-42f4-845e-f0a8bd197fa7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1786,7 +1786,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5fd0e608-dffc-4fda-a0a1-0de71eeaaf28")
+			(uuid "7e592899-c9d1-45f1-a585-d090f3895049")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2013,37 +2013,26 @@
 			(uuid "aa1c6cce-a2a5-42d0-91af-6a92b68fb327")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_Keyboard.3dshapes/SW_Cherry_MX_1.00u_PCB.wrl"
-			(offset
-				(xyz 0 2.2 5.5)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz -90 -0 180)
-			)
-		)
-		(model "${KIPRJMOD}/libs/steps/MX .STEP"
-			(offset
-				(xyz 4.8 2.2 5.5)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz -90 -0 -180)
-			)
-		)
 		(model "${KIPRJMOD}/libs/steps/DSA_Keycap_CherryMX.step"
 			(offset
-				(xyz -2.5 -5 8.5)
+				(xyz -3 -5 8.5)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
 				(xyz -90 -0 -0)
+			)
+		)
+		(model "${KIPRJMOD}/libs/steps/MX .STEP"
+			(offset
+				(xyz 4.8 2.2 5.8)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -180 -0)
 			)
 		)
 	)
@@ -3468,7 +3457,7 @@
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/libs/steps/MX .STEP"
 			(offset
-				(xyz 4.8 2.2 5.5)
+				(xyz 4.8 2.2 5.8)
 			)
 			(scale
 				(xyz 1 1 1)

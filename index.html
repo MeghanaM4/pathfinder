@@ -26,35 +26,36 @@
 
       <div class="stepContainer" style="top:17% ; left:34.5%;" onclick="goToPage('mapPage', 'step1')">
         <div class="titleContainer">
-          <h3 class="title">set up KiCAD</h3>
+          <h3 class="title">1. set up KiCAD</h3>
         </div>
         <div class="step"></div>
       </div>
 
       <div class="stepContainer" style="top: 40%; left:45%;" onclick="goToPage('mapPage', 'step2')">
         <div class="titleContainer">
-          <h3 class="title">make schematic</h3>
+          <h3 class="title">2. make schematic</h3>
         </div>
         <div class="step"></div>
       </div>
 
       <div id="step3Dot" class="stepContainer" style="top: 58%; left: 88%;" onclick="goToPage('mapPage', 'step3')">
         <div class="titleContainer">
-          <h3 class="title">design PCB</h3>
+          <h3 class="title">3. design PCB</h3>
         </div>
         <div class="step"></div>
       </div>
 
       <div class="stepContainer" style="top: 84%; left: 29%;" onclick="goToPage('mapPage', 'step4')">
         <div class="titleContainer">
-          <h3 class="title">code firmware</h3>
+          <h3 class="title">4. code firmware</h3>
         </div>
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 12%; left: 7%;" onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')">
+      <div class="stepContainer" style="top: 12%; left: 7%;"
+        onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')">
         <div class="titleContainer">
-          <h3 class="title">submit</h3>
+          <h3 class="title">5. submit</h3>
         </div>
         <div class="step"></div>
       </div>
@@ -480,12 +481,90 @@
       <div class="infoBox">
         <p class="info">This video'll teach you all about PCB routing and how you can polish off your PCB</p>
         <p>stay till the end for a super sick outro</p>
-        <iframe width="420px" style="margin-top:1rem; border-color: #8c2e37; border-width: 0.5rem;" target="_blank" height="315px"
-          src="https://www.youtube.com/embed/MFTP7uMzt1s">
+        <iframe width="420px" style="margin-top:1rem; border-color: #8c2e37; border-width: 0.5rem;" target="_blank"
+          height="315px" src="https://www.youtube.com/embed/MFTP7uMzt1s">
         </iframe>
       </div>
 
+      <div></div>
 
+      <div class="image-text-section">
+        <img style="height: 346;width:600px"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3be0fe1f414433e63eebee5e866b4c4a8e9164f6_ezgif-3b0f0f050d1743__1_.gif">
+        <div style="flex-direction: column;">
+          <p class="info">
+            Download these four 3D models so we can put them in our PCB 3D viewer. I got these from
+            <a href="https://grabcad.com/library" style="color:#f5c04e">GrabCAD</a>, you can totally find
+            different ones (or even make your own) if you want.
+          </p>
+          <br>
+          <p class="info">
+            <a style="color:#f5c04e"
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/ea4d5fbb7c8fc6a94362763d65bf844b92445756_seeed_studio_xiao_rp2040_v26.step">
+              XIAO RP2040
+            </a>
+            <br>
+            <br>
+            <a style="color:#f5c04e"
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b23b2af1c99153fe488ddd7cfa8304c6e30416d8_mx_.step">
+              Cherry MX Switch
+            </a>
+            <br>
+            <br>
+            <a style="color:#f5c04e"
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c990debf2e87af77aff33d4675e1050119eaf0e5_dsa_keycap_cherrymx.step">
+              Switch Keycap
+            </a>
+            <br>
+            <br>
+            <a style="color:#f5c04e"
+              href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b23b2af1c99153fe488ddd7cfa8304c6e30416d8_mx_.step">
+              LED
+            </a>
+
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-section">
+        <div style="flex-direction: column;">
+          <p class="info">
+            Go to your PCB editor and select a footprint. Hit "E" on your keyboard (or right click and choose
+            "Properties"). Click
+            the "3D Models" tab on the menu that pops up and find the file icon.
+          </p>
+          <br>
+          <p class="info">
+            Select the CAD model for that component and you should see it show up in the preview. You'll probably have
+            to do some rotating and offsets to make sure everything lines up properly.
+          </p>
+        </div>
+        <img style="height: 250px; width: 550px;"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b764c4d4064bf6f1dd59e391af66a9f2bdb571c9_ezgif-3ea2513eb2606c.gif">
+      </div>
+
+      <div class="image-text-section">
+        <img style="height: 300px; width: 550px;"
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/8cdafaada589a2e7df8d7ab3b140fe139fec03ce_ezgif-4eba2803d543a0.gif">
+
+        <div style="flex-direction: column;">
+          <p class="info">
+            For your switches (buttons), you'll add the model of the switch AND the model of the keycap. You
+            can add one at a time (file icon -> select file x2).
+          </p>
+          <br>
+          <p class="info">
+            When you're done adding the model for all the components, open the 3D Viewer and you'll see a shiny new
+            PCB!
+          </p>
+        </div>
+      </div>
+
+      <div class="infoBox" style="text-align: center;">
+        <p class="info" style="text-align: center;">
+          Woohoo, you're ready to start coding!
+        </p>
+      </div>
 
     </div>
     <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step3', 'step2')">
@@ -502,16 +581,19 @@
 
       <div class="infoBox" style="flex-direction: column;">
         <p class="info">
-          You're nearing the last leg. It's now time to code your firmware. We'll be coding in C++, specifically in Arduino code. To be
-          able to compile and flash your code onto your PCB, download the 
+          You're nearing the last leg. It's now time to code your firmware. We'll be coding in C++, specifically in
+          Arduino code. To be
+          able to compile and flash your code onto your PCB, download the
           <a href="https://www.arduino.cc/en/software/" target="_blank" style="color:#8c2e37;">Arduino IDE</a> and use
-          <a href="https://wiki.seeedstudio.com/XIAO-RP2040-with-Arduino/" target="_blank" style="color:#8c2e37">this guide</a> to add your XIAO RP2040
+          <a href="https://wiki.seeedstudio.com/XIAO-RP2040-with-Arduino/" target="_blank" style="color:#8c2e37">this
+            guide</a> to add your XIAO RP2040
           board to it.
         </p>
 
         <p class="info">
           You can set up Arduino Hackatime
-          <a href="https://wakatime.com/arduino-ide" target="_blank" style="color:#8c2e37">here</a>, and use it to track your time.
+          <a href="https://wakatime.com/arduino-ide" target="_blank" style="color:#8c2e37">here</a>, and use it to track
+          your time.
         </p>
 
       </div>
@@ -623,8 +705,10 @@
 
       <div class="infoBox">
         <p class="info" style="text-align: center;">
-          Remember: this is a tutorial of MY firmware. To be a valid submission, you must make your own. Try and play around with different 
-          secret controls and timings. Maybe you could add a secret clock hidden in the LED blinks, maybe your LEDs spout morse code 
+          Remember: this is a tutorial of MY firmware. To be a valid submission, you must make your own. Try and play
+          around with different
+          secret controls and timings. Maybe you could add a secret clock hidden in the LED blinks, maybe your LEDs
+          spout morse code
           according to specific button taps, who knows.
         </p>
 
