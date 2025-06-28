@@ -16,6 +16,9 @@
     <p style="text-shadow: 0 0 1rem black" class="subtitle">make a custom PCB controller board and efidget</p>
     <p style="margin-top: 0.5rem">(maybe learn hardware skills along the way)</p>
     <button class="button" onclick="goToPage('mainPage', 'mapPage')">Build your Pathfinder</button>
+      <img src="render.png" style="height:417.667px; width:334.667.5px; margin-top:2rem">
+
+    
   </div>
 
   <div id="mapPage">
@@ -963,7 +966,7 @@
               <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
               <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
               <g id="SVGRepo_iconCarrier">
-                <path stroke-linecape="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
                 <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
               </g>
             </svg>
@@ -1022,11 +1025,11 @@
         if (el) el.style.display = 'none';
 
       });
-
       const nextPage = document.getElementById(next);
-
       if (nextPage) nextPage.style.display = 'block';
       else console.error('Element not found:', next);
+
+      document.body.scrollTop = 0;
     }
 
   </script>

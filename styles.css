@@ -21,13 +21,12 @@ body {
 }
 
 .page {
-    height: 100vh;
     height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    overflow: hidden;
 }
 
 .button {
@@ -300,6 +299,13 @@ body {
         font-size: 1.5rem;
         padding: 1rem;
     }
+}
+
+#mainPage img {
+    max-height: 50vh;
+    width: auto;
+    object-fit: contain;
+    margin-top: 2rem;
 }
 
 /* From Uiverse.io by Yaya12085 */
