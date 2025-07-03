@@ -12,14 +12,15 @@
 
 <body>
   <div id="mainPage" class="page">
-    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">Limited time only! ends July 4th, 2025</marquee>
+    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">Limited time only! ends
+      July 4th, 2025</marquee>
     <h1 style="text-shadow: 0 0 1rem greenyellow; margin-top: 2rem">Welcome to Pathfinder</h1>
     <p style="text-shadow: 0 0 1rem black" class="subtitle">make a custom PCB controller board and efidget</p>
     <p style="margin-top: 0.5rem">(maybe learn hardware skills along the way)</p>
     <button class="button" onclick="goToPage('mainPage', 'mapPage')">Build your Pathfinder</button>
-      <img src="render.png" style="height:417.667px; width:334.667.5px; margin-top:2rem">
+    <img src="render.png" style="height:417.667px; width:334.667.5px; margin-top:2rem">
 
-    
+
   </div>
 
   <div id="mapPage">
@@ -50,17 +51,24 @@
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 84%; left: 29%;" onclick="goToPage('mapPage', 'step4')">
+      <div class="stepContainer" style="top: 81%; left: 70%;" onclick="goToPage('mapPage', 'step4')">
         <div class="titleContainer">
           <h3 class="title">4. code firmware</h3>
         </div>
         <div class="step"></div>
       </div>
 
-      <div class="stepContainer" style="top: 12%; left: 7%;"
+      <div class="stepContainer" style="top: 70%; left: 39%;"
         onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')">
         <div class="titleContainer">
           <h3 class="title">5. submit</h3>
+        </div>
+        <div class="step"></div>
+      </div>
+
+      <div class="stepContainer" style="top: 48%; left: 19%;" onclick="goToPage('mapPage', 'step6')">
+        <div class="titleContainer">
+          <h3 class="title">6. Buy your PCB</h3>
         </div>
         <div class="step"></div>
       </div>
@@ -390,11 +398,12 @@
       </div>
 
     </div>
-    <button class="button" style="margin-right:1rem;" id="nextBtn" onclick="goToPage('step2', 'step3')">next step
-      >></button>
+    <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step2', 'step1')">
+      << prev step</button>
+
+        <button class="button" style="margin-right:1rem;" id="nextBtn" onclick="goToPage('step2', 'step3')">next step
+          >></button>
   </div>
-
-
 
   <div id="step3" class="step-page" style="display: none">
     <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
@@ -1012,7 +1021,204 @@
 
     <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step4', 'step3')">
       << prev step</button>
+
+        <button class="button" id="nextBtn" style="margin-right: 1rem;"
+          onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')"">
+      submit!!</button>
   </div>
+
+  <div id="step6" class="step-page" style="display: none">
+          <div class="content-wrapper">
+            <h1 style="padding-top:2rem">Step 6: Buy your PCB off JLCPCB</h1>
+            <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
+
+
+            <div class="infoBox" style="flex-direction: column;">
+              <p class="info">
+                IMPORTANT: I'm showing you how to buy off of JLCPCB. If the order comes out to be too expensive,
+                there is probably a cheaper alternative for your country.
+              </p>
+              <p class="info">
+                If you need help finding a good PCB distributor, ask in the #electronics channel on the Slack or
+                DM me (@Meghana).
+              </p>
+
+            </div>
+
+            <div class="image-text-section">
+              <img style="width:500px"
+                src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e98b2de9f6cc6731c065b409f806b19dfbcaf275_ezgif-77cd5b3b06a711.gif">
+
+              <div style="flex-direction: column;">
+                <p class="info">
+                  First, we need to get the files for our PCB so it can be printed and cut. We can't just upload our
+                  KiCAD
+                  project files because they aren't standard and don't have the right information that a PCB
+                  distributor needs.
+                </p>
+                <br>
+                <p class="info">
+                  The files we do need are called gerber and dril files. Funny names, I know, it's awesome. Open up
+                  your KiCAD PCB Editor, go to File -> Fabrication Outputs -> Gerbers (.gbr)
+                </p>
+                <br>
+                <p class="info">
+                  Then, click "Plot". This should make a ton of .gbr files and one .gbrjob file show up in your
+                  project folder.
+                </p>
+
+              </div>
+
+
+            </div>
+
+            <div class="image-text-section">
+
+              <div style="flex-direction: column;">
+                <p class="info">Go to your project folder and make a folder called "prod" (short for production).
+                  Move all the gerber files to this folder
+                </p>
+              </div>
+
+              <img style="height:300px;" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/09be228ab3d7d85e20482aaa71ba19f4ec0d63ee_ezgif-5f9094ea04efd2.gif">
+
+            </div>
+
+            <div class="image-text-section">
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/002fcb676991bf24e38f9691831e9a6f18ba0caa_ezgif-301508999af8b3.gif">
+              
+              <div style="flex-direction: column;">
+                <p class="info">
+                  Now we need the .dril files (dril files show where holes are in the PCB. Drill. Get it?). Go back to
+                  your PCB Editor, go to File -> Export -> Fabrication Outputs -> Drill Files (.dril) and click the file
+                  icon on the window that pops up to select the "prod" folder you just made.
+                </p>
+                <br>
+                <p class="info">
+                  Hit "Generate" to put the dril files in the prod folder.
+                </p>
+              </div>
+            </div>
+
+            <div class="image-text-section">
+
+              <div style="flex-direction: column;">
+                <p class="info">
+                  Go to your File Explorer and select your prod folder. Now, find the option to ZIP your folder
+                  (it might be something called "Compress to ZIP")
+                </p>
+                <br>
+                <p class="info">
+                  Some PCB distributors only take zip files (cause they're smaller).
+                </p>
+              </div>
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/16ebc142f9801f382025c40b8f5035060b29f140_ezgif-4e925bc934e76a.gif">
+
+            </div>
+
+            <div class="image-text-section">
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/3e161f85582f377aff5ecd08690871c5fd7929b9_ezgif-4e939e94ee0b7a.gif">
+
+              <div style="flex-direction: column;">
+                <p class="info">
+                  Now, go to
+                  <a style="color:#f5c04e" href="https://jlcpcb.com/">JLCPCB.com</a> (you should make an account)
+                  and click "Order now" in the top right.
+                </p>
+                <br>
+                <p class="info">
+                  Hit the massive "Add gerber file" button and upload your prod.zip folder
+                </p>
+              </div>
+
+            </div>
+
+            <div class="image-text-section">
+              <div style="flex-direction: column;">
+                <p class="info">
+                  After it's done uploading, you should see a preview of your PCB. (If you don't, you probably
+                  didn't download the right files)
+                </p>
+                <br>
+                <p class="info">
+                  If you scroll down, you're going to see a lot of options. We don't care about most of them.
+                  The minimum number of PCBs you can order on JLCPCB is 5, so you'll actually receive 5 PCBs
+                  even though you only have the parts to build one Pathfinder.
+                </p>
+              </div>
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b7cf4a0f9e74ffe449ca5aab27bbc092d261d15a_ezgif-1946e769bd0465.gif">
+            </div>
+
+            <div class="image-text-section">
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/26a7402ef542d6481d6bc71dff12c403245b457e_ezgif-295b2f7add95f5.gif">
+
+              <div style="flex-direction: column;">
+                <p class="info">
+                  Change your PCB Thickness to 0.8mm, this makes the PCB cheaper and doesn't compromise the 
+                  strength of it.
+                </p>
+                <br>
+                <p class="info">
+                  You can also change the color of your PCB. If it doesn't add to the cost of your PCB, you're
+                  free to change it to whatever you want.
+                </p>
+                <br>
+                <p class="info">
+                  We don't care about anything else, so click "Save to Cart" on the left.
+                </p>
+              </div>
+            </div>
+
+            <div class="image-text-section">
+              <div style="flex-direction: column;">
+                <p class="info">
+                Click your cart in the top right, select the checkbox next your PCB, and click "Secure Checkout"
+              </p>
+              <br>
+              <p class="info">
+                Make sure your shipping info is all correct, and make sure your Billing Address is the one on your
+                HCB card (usually the Santa Monica Blvd address)
+              </p>
+              <br>
+              <p class="info">
+                For Shipping Method, the cheapest option is Global Standard Direct Line (you can go through
+                all of the options and make sure). If your total is significantly more than $5, DM Meghana.
+              </p>
+              <br>
+              <p class="info">
+                Click Pay Directly and then submit your order.
+              </p>
+              </div>
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7e7b308cb21c89ec842eab71556a45a885694da7_ezgif-71724f73d0e613.gif">
+            </div>
+
+            <div class="image-text-section">
+
+              <img style="width:500px" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5ea9ca239c3f906a8448f3924a9fceda16d82d32_image.png">
+
+              <div style="flex-direction: column;">
+                <p class="info">
+                  Fill out your HCB card's payment information and make sure to find coupons that get your 
+                  price down (I found a $6 one that made my whole order $4.41)
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="button" id="prevBtn" style="margin-left: 1rem;" onclick="goToPage('step4', 'step3')">
+            << prev step</button>
+
+
+  </div>
+
+
   </div>
 
   <script>
