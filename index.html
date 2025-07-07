@@ -1037,7 +1037,7 @@
       << prev step</button>
 
         <button class="button" id="nextBtn" style="margin-right: 1rem;"
-          onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')"">
+          onclick="window.open('https://forms.hackclub.com/pathfindersubmit', '_blank')">
       submit!!</button>
   </div>
 
@@ -1245,18 +1245,23 @@
 
   <script>
 
-    const allPages = ['mainPage', 'mapPage', 'step1', 'step2', 'step3', 'step4'];
+    const allPages = ['mainPage', 'mapPage', 'step1', 'step2', 'step3', 'step4', 'step6'];
 
     function goToPage(current, next) {
 
       allPages.forEach(page => {
         const el = document.getElementById(page);
-        if (el) el.style.display = 'none';
+        if (el) 
+          el.style.display = 'none';
 
       });
+      
       const nextPage = document.getElementById(next);
-      if (nextPage) nextPage.style.display = 'block';
-      else console.error('Element not found:', next);
+
+      if (nextPage) 
+        nextPage.style.display = 'block';
+      else 
+        console.error('Element not found:', next);
 
       document.body.scrollTop = 0;
     }
