@@ -22,19 +22,7 @@ async function getSubmissions() {
 
         projects = submissions.map((submission, index) => {
             const fields = submission.fields;
-            
-            const images = [];
-            if (fields.Screenshot && fields.Screenshot.length > 0) {
-                fields.Screenshot.forEach(img => {
-                    if (img.url) {
-                        images.push(img.url);
-                    }
-                });
-            }
-            
-            if (images.length === 0) {
-                images.push("https://hc-cdn.hel1.your-objectstorage.com/s/v3/ee0109f20430335ebb5cd3297a973ce244ed01cf_depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg");
-            }
+            const images = extractImages(fields);
 
             return {
                 id: index + 1,
@@ -163,3 +151,30 @@ function prevSlide(projectId) {
     const prevIndex = (currentIndex - 1 + project.images.length) % project.images.length;
     showSlide(projectId, prevIndex);
 }
+
+const extractImages = (fields) => {
+    const images = [];
+    
+    const imageFields = [
+        'Screenshot',
+        'Schematic Screenshot',
+        'PCB Back Screenshot'
+    ];
+    
+    imageFields.forEach(fieldName => {
+        const fieldData = fields[fieldName];
+        if (fieldData && Array.isArray(fieldData) && fieldData.length > 0) {
+            fieldData.forEach(img => {
+                if (img && img.url) {
+                    images.push(img.url);
+                }
+            });
+        }
+    });
+    
+    if (images.length === 0) {
+        images.push("https://hc-cdn.hel1.your-objectstorage.com/s/v3/ee0109f20430335ebb5cd3297a973ce244ed01cf_depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg");
+    }
+    
+    return images;
+};
