@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function getSubmissions() {
     try {
         document.getElementById('make-yours').style.display = 'none';
-        const url = `https://api2.hackclub.com/v0.1/Pathfinder/YSWS%20Project%20Submission?select={%22filterByFormula%22:%20%22{Automation%20-%20YSWS%20Record%20ID}%20%22}`;
+        const url = `https://api2.hackclub.com/v0.1/Pathfinder/YSWS%20Project%20Submission?select={%22filterByFormula%22:%20%22{Automation%20-%20YSWS%20Record%20ID}%20%22}&cache=true`;
         console.log('Fetching from:', url);
         
         const response = await fetch(url);
