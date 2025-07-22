@@ -72,7 +72,7 @@ function renderProjects(projectsToRender = projects) {
         const carouselSlides = project.images.map((image, index) => `
             <div class="carousel-slide ${index === 0 ? 'active' : ''}">
                 <img src="${image}" alt="${project.title} - Image ${index + 1}" 
-                     onerror="this.src='https://hc-cdn.hel1.your-objectstorage.com/s/v3/ee0109f20430335ebb5cd3297a973ce244ed01cf_depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'">
+                     onerror="this.src='https://www.freeiconspng.com/uploads/wrench-png-2.png'">
             </div>
         `).join('');
         
