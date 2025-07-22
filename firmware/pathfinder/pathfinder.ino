@@ -7,13 +7,13 @@ int LED2 = D4;
 int LED3 = D5;
 
 void setup() {
-  pinMode(BUT1, INPUT);  //you have to do this so Arduino know to set internal pull-up resistors correctly
-  pinMode(BUT2, INPUT);  //buttons are inputs (user does an action)
-  pinMode(BUT3, INPUT);
+  pinMode(BUT1, INPUT_PULLUP);  //you have to do this so Arduino know to set internal pull-up resistors correctly
+  pinMode(BUT2, INPUT_PULLUP);  //buttons are inputs (user does an action)
+  pinMode(BUT3, INPUT_PULLUP);
 
-  pinMode(LED1, OUTPUT);  //LEDs are outputs (result of action)
-  pinMode(LED2, OUTPUT);
-  pinMode(LED3, OUTPUT);
+  pinMode(LED1, INPUT_PULLUP);  //LEDs are outputs (result of action)
+  pinMode(LED2, INPUT_PULLUP);
+  pinMode(LED3, INPUT_PULLUP);
 
   long startTime = millis();  //log official start time (optional)
 }

@@ -30,11 +30,11 @@
       <div class="highlightBox" style="flex-direction: column;">
         <p class="highlight" style="padding-top: 0.8rem;">
           Made by Meghana
-          <a style="color: #025e53" href="https://meghana.co/">meghana.co</a>
+          <a style="color: #025e53" target="_blank" href="https://meghana.co/">meghana.co</a>
         </p>
         <p class="highlight">
           Check out the GitHub repo for this project
-          <a style="color: black;" href="https://github.com/MeghanaM4/pathfinder">here</a>
+          <a style="color: black;" target="_blank" href="https://github.com/MeghanaM4/pathfinder">here</a>
         </p>
       </div>
     </div>
@@ -661,13 +661,16 @@
       <div class="image-text-section">
         <div style="flex-direction: column;">
           <p class="info">
-            This assigns pin numbers for all the components.
+            This assigns pin numbers for all the components. Check your PCB Editor and the XIAO RP2040's pinout
+            to see what pins your LEDs and buttons are connected to. If you mess up these numbers the microcontroller
+            will be reading voltages from the wrong pins and directing voltage to the wrong pins (so it looks like
+            nothing
+            is happening).
           </p>
           <br>
           <p class="info">
-            These numbers probably won't work for you, so make sure to
-            check the XIAO
-            RP2040's pinout and your PCB editor to find which pins your LEDs and buttons are connected to.
+            These numbers 90% won't work for you, so make sure you double-check the XIAO
+            RP2040's pinout and your PCB editor.
           </p>
 
         </div>
@@ -731,9 +734,9 @@
           </p>
 
           <div class="property">
-            <p><span class="color-1">pinMode</span><span>(BUT1, INPUT);</span></p>
-            <p><span class="color-1">pinMode</span><span>(BUT2, INPUT);</span></p>
-            <p><span class="color-1">pinMode</span><span>(BUT3, INPUT);</span></p>
+            <p><span class="color-1">pinMode</span><span>(BUT1, INPUT_PULLUP);</span></p>
+            <p><span class="color-1">pinMode</span><span>(BUT2, INPUT_PULLUP);</span></p>
+            <p><span class="color-1">pinMode</span><span>(BUT3, INPUT_PULLUP);</span></p>
             <br>
             <p><span class="color-1">pinMode</span><span>(LED1, OUTPUT);</span></p>
             <p><span class="color-1">pinMode</span><span>(LED2, OUTPUT);</span></p>
@@ -752,13 +755,22 @@
         </div>
 
         <div style="flex-direction: column;">
-          <p class="info">This is so Arduino know to set internal pull-up resistors correctly</p>
+          <p class="info">In Arduino, you need to declare whether your component is an <strong>input</strong>
+            or an <strong>output</strong>. This is so the microcontroller knows whether it needs to send current/voltage
+            out of the pin or read voltage coming out of the pin. This also sets up pull-up resistors.
+          </p>
           <br>
-          <p class="info">Buttons are inputs (user does an action)</p>
+          <p class="info">Buttons are input. The user does an action and microcontroller needs to look out for
+            a voltage sent from the button.
+          </p>
           <br>
-          <p class="info">LEDs are outputs (result of action)</p>
+          <p class="info">LEDs are outputs. The pins connected to the LED need to have voltage driven
+            out of them.
+          </p>
           <br>
-          <p class="info">We're also logging official start time (optional)</p>
+          <p class="info">We're also logging official start time with the millis() function. millis() returns
+            the time in milliseconds after the program has started.
+          </p>
         </div>
 
       </div>
@@ -774,10 +786,10 @@
 
       </div>
 
-      <!-- Code Block 3: Loop function declaration and variable initialization -->
       <div class="image-text-section">
         <p class="info">
-          Initializing time variables.
+          I want to track when each button is pressed, so I'm making a variable I can assign the millis() function
+          to later.
         </p>
 
         <div class="code-editor">
@@ -859,23 +871,32 @@
         </div>
         <div style="flex-direction: column;">
           <p class="info">
-            This code block says "if button 1 is pressed then turn on LED 1"
+            digitalRead(pin#) reads the voltage of the given pin number at that point (so in a loop it'll be checking
+            constantly). digitalRead will return HIGH if the button is pressed and LOW if the button is now.
+            digitalWrite(pin#)
+            directs voltage to the given pin, so the component attached to it will receive 3.3V.
+
           </p>
           <br>
           <p class="info">
-            It also logs the time at which button 1 was pressed (millis())
+            This code
+            block says, "if the button is pressed, set but1time to the current time and turn on LED1. If it's not being
+            pressed, then turn LED1 off."
           </p>
           <br>
           <p class="info">
-            Buttons and LEDs are digital components, so that's why it's digitalRead and digitalWrite.
+            Buttons and LEDs are digital components, so that's why it's digitalRead and digitalWrite. If you wanted the
+            LED
+            to slowly fade in, you would use a for loop and analogWrite(pin#, value). value can be any int between 0-255
+            with 255 being
+            the brightest.
           </p>
         </div>
       </div>
 
-      <!-- Code Block 5: Button 2 logic -->
       <div class="image-text-section">
         <p class="info">
-          Logs time that button 2 was pressed.
+          Just like button 1, this saves the time that button 2 was pressed but doesn't light up the LED.
         </p>
 
         <div class="code-editor">
@@ -958,15 +979,16 @@
         </div>
       </div>
 
-      <!-- Code Block 7: Button 3 hold timer logic -->
       <div class="image-text-section">
         <div style="flex-direction: column;">
           <p class="info">
-            This keeps track of how long button 3 has been pressed by adding 1 every time a loop goes by.
+            This keeps track of how long button 3 has been pressed by adding 1 every time a loop goes by. loop()
+            is executed constantly, and if you add one every time button 3 is pressed you can set a minimum time for the
+            LED to light up.
           </p>
           <br>
           <p class="info">
-            If it's not pressed, then it sets the button 3 time back to 0
+            If a loop goes by and button 3 is not pressed, it sets the button 3 time back to 0.
           </p>
         </div>
 
@@ -1058,9 +1080,21 @@
           </div>
         </div>
         <p class="info">
-          If button 3 is pressed for more than 800 loops then turn LED3 on
+          If button 3 is pressed for more than 800 loops then turn LED3 on.
         </p>
       </div>
+
+      <div class="infoBox">
+        <p class="info" style="padding-top:1rem">
+          These are all the basic functions you need to know in order to make Pathfinder firmware. Yes, they're 
+          simple, but there are so many combinations of things you can do that the possibilities are endless. People 
+          have done reaction time games, simon says, and so much more.
+        </p>
+        <p class="info">
+          Check out the <a style="color:#8c2e37" target="_blank" href="https://pathfinder.hackclub.com/gallery">project gallery</a> if you need inspiration!
+        </p>
+      </div>
+      <div></div>
 
     </div>
 
@@ -1174,7 +1208,7 @@
         <div style="flex-direction: column;">
           <p class="info">
             Now, go to
-            <a style="color:#f5c04e" href="https://jlcpcb.com/">JLCPCB.com</a> (you should make an account)
+            <a style="color:#f5c04e" target="_blank" href="https://jlcpcb.com/">JLCPCB.com</a> (you should make an account)
             and click "Order now" in the top right.
           </p>
           <br>
