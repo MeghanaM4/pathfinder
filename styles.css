@@ -449,7 +449,7 @@ body {
     background-color: #f5c04e;
     color: white;
     border: none;
-    border-radius: 1rem;
+    border-radius: 8px;
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
