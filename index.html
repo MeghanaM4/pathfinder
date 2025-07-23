@@ -12,9 +12,11 @@
 
 <body>
   <div id="mainPage" class="page">
-    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">For a limited time only! ends
+    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">For a limited time only!
+      ends
       August 1st, 2025!</marquee>
     <div>
+
       <button class="button" id="peegee" style="margin-top:2.5rem" onclick="window.location.href='gallery/'">project
         gallery >>></button>
     </div>
@@ -45,13 +47,13 @@
   <div id="mapPage">
     <h1>Pathfinder Treasure Map</h1>
 
-    <div>
-      <button class="button" id="backBtn" onclick="goToPage('mapPage', 'mainPage')">back</button>
-    </div>
 
-    <div>
-      <button class="button" id="peegee" onclick="window.location.href='gallery/'">project gallery</button>
-    </div>
+    <button class="button" id="backBtn" onclick="goToPage('mapPage', 'mainPage')">back</button>
+
+    <button class="help-button" id="helpBtn" onclick="showHelp()">?</button>
+
+    <button class="button" id="peegee" onclick="window.location.href='gallery/'">project gallery</button>
+
 
     <div>
 
@@ -103,7 +105,7 @@
 
   <div id="step1" class="step-page" style="display: none">
 
-    <button class="button" id="backBtn" onclick="goToPage('step1', 'mapPage')">back to map</button>
+    <button class="button" id="backtoMapBtn" onclick="goToPage('step1', 'mapPage')">back to map</button>
 
     <div class="content-wrapper">
       <h1 style="padding-top:2rem">Step 1: Setting up KiCAD</h1>
@@ -167,7 +169,7 @@
 
   <div id="step2" class="step-page" style="display: none">
     <div class="content-wrapper">
-      <button class="button" id="backBtn" onclick="goToPage('step2', 'mapPage')">back to map</button>
+      <button class="button" id="backtoMapBtn" onclick="goToPage('step2', 'mapPage')">back to map</button>
 
       <h1 style="padding-top:2rem">Step 2: Make Your Schematic</h1>
 
@@ -452,7 +454,7 @@
   </div>
 
   <div id="step3" class="step-page" style="display: none">
-    <button class="button" id="backBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
+    <button class="button" id="backtoMapBtn" onclick="goToPage('step3', 'mapPage')">back to map</button>
 
     <div class="content-wrapper">
 
@@ -636,7 +638,7 @@
   <div id="step4" class="step-page" style="display: none">
     <div class="content-wrapper">
       <h1 style="padding-top:2rem">Step 4: Code your Firmware</h1>
-      <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
+      <button class="button" id="backtoMapBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
 
 
       <div class="infoBox" style="flex-direction: column;">
@@ -1086,12 +1088,13 @@
 
       <div class="infoBox" style="margin-bottom: 1rem;">
         <p class="info" style="padding-top:1rem">
-          These are all the basic functions you need to know in order to make Pathfinder firmware. Yes, they're 
-          simple, but there are so many combinations of things you can do that the possibilities are endless. People 
+          These are all the basic functions you need to know in order to make Pathfinder firmware. Yes, they're
+          simple, but there are so many combinations of things you can do that the possibilities are endless. People
           have done reaction time games, simon says, and so much more.
         </p>
         <p class="info">
-          Check out the <a style="color:#8c2e37" target="_blank" href="https://pathfinder.hackclub.com/gallery">project gallery</a> if you need inspiration!
+          Check out the <a style="color:#8c2e37" target="_blank" href="https://pathfinder.hackclub.com/gallery">project
+            gallery</a> if you need inspiration!
         </p>
       </div>
       <div></div>
@@ -1109,7 +1112,7 @@
   <div id="step6" class="step-page" style="display: none">
     <div class="content-wrapper">
       <h1 style="padding-top:2rem">Step 6: Buy your PCB off JLCPCB</h1>
-      <button class="button" id="backBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
+      <button class="button" id="backtoMapBtn" onclick="goToPage('step4', 'mapPage')">back to map</button>
 
 
       <div class="infoBox" style="flex-direction: column;">
@@ -1208,7 +1211,8 @@
         <div style="flex-direction: column;">
           <p class="info">
             Now, go to
-            <a style="color:#f5c04e" target="_blank" href="https://jlcpcb.com/">JLCPCB.com</a> (you should make an account)
+            <a style="color:#f5c04e" target="_blank" href="https://jlcpcb.com/">JLCPCB.com</a> (you should make an
+            account)
             and click "Order now" in the top right.
           </p>
           <br>
@@ -1308,6 +1312,41 @@
 
   </div>
 
+  <div class="popup-overlay" id="helpPopup">
+        <div class="popup-content">
+            <button class="close-button" onclick="hideHelp()">×</button>
+            <h2>What is Pathfinder?</h2>
+            <p>Make a custom PCB with 4 buttons and 4 LEDs and get the parts to build it!</p>
+
+            <h3>How does it work?</h3>
+            <p>Your Pathfinder will be a small controller pad that you can code to do some pretty awesome stuff.
+              With Pathfinder you'll learn
+            </p>
+            <ul>
+                <li>How to make a PCB schematic</li>
+                <li>How to design a PCB and route it<li>
+                <li>How to code using arduino</li>
+                <li>How basic input/output circuitry works</li>
+                <li>How to order a PCB from a manufacturer</li>
+            </ul>
+
+            <h3>Why?</h3>
+            <p>It's all about restrictions: how awesome can you make something that only has 4 buttons and 4 lights? 
+              Pathfinder is the first installment of <a href="https://meghana.co">Meghana's</a> mission 
+            to get more teenagers into hardware.</p>
+
+            <h3>Need Help?</h3>
+            <p>If you get stuck, chuck a message in the #pathfinder channel on the Hack Club Slack!</p>
+
+            <h3>The Philosophy</h3>
+            <p>
+              Hardware is intimating. To non-technical people, it's a giant mountain that seems impossible to navigate.
+              For software geeks, it's a field they put off exploring because it's "not their thing". Everything I do aims 
+              to prove them wrong. Anyone can do hardware.
+            </p>
+        </div>
+    </div>
+
   <script>
 
     const allPages = ['mainPage', 'mapPage', 'step1', 'step2', 'step3', 'step4', 'step6'];
@@ -1330,6 +1369,38 @@
 
       document.body.scrollTop = 0;
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new TreasureMapLine();
+    });
+
+    window.addEventListener('resize', () => {
+      setTimeout(() => {
+        new TreasureMapLine();
+      }, 100);
+    });
+
+    function showHelp() {
+      document.getElementById('helpPopup').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideHelp() {
+      document.getElementById('helpPopup').classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('helpPopup').addEventListener('click', function (e) {
+      if (e.target === this) {
+        hideHelp();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        hideHelp();
+      }
+    });
 
   </script>
 </body>
