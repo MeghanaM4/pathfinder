@@ -485,7 +485,7 @@ body {
 }
 
 .popup-content {
-    background-color: #f4e09f;
+    background-color: #8c2e37;
     border-radius: 15px;
     padding: 2rem;
     max-width: 500px;
@@ -516,7 +516,7 @@ body {
     background: none;
     border: none;
     font-size: 2rem;
-    color: #8c2e38;
+    color: #faffdc;
     cursor: pointer;
     line-height: 1;
     padding: 0;
@@ -536,13 +536,13 @@ body {
 }
 
 .popup-content h2 {
-    color: black;
+    color: #faffdc;
     margin-bottom: 1rem;
     font-size: 1.8rem;
 }
 
 .popup-content h3 {
-    color: #2c2c2c;
+    color: #faffdc;
     margin: 1.5rem 0 0.5rem 0;
     font-size: 1.3rem;
 }
@@ -551,7 +551,7 @@ body {
     text-align: left;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: #2c2c2c;
+    color: #faffdc;
 }
 
 .popup-content ul {
@@ -562,7 +562,7 @@ body {
 
 .popup-content li {
     margin-bottom: 0.5rem;
-    color: #2c2c2c;
+    color: #faffdc;
 }
 
 .popup-content a {
