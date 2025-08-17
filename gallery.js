@@ -103,7 +103,7 @@ function renderProjects(projectsToRender = projects) {
                 <p class="card-description">${project.description}</p>
                 <p class="card-author">- made by ${project.author} from ${project.country}</p>
                 <div class="card-actions">
-                    <a href="${project.githubUrl}" target="_blank" class="github-button">
+                    <a href="${project.projectUrl}" target="_blank" class="github-button">
                         GitHub Repo
                     </a>
                 </div>
