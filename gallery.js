@@ -35,7 +35,7 @@ async function getSubmissions() {
                 difficulty: fields["Difficulty Level"] || "beginner",
                 featured: fields["Featured"] === true || false,
                 //more fields
-                projectUrl: fields["Project URL"] || null,
+                projectUrl: fields["Code URL"] || null,
                 submissionDate: fields["Created"] || null
             };
         });
