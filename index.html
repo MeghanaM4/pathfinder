@@ -12,9 +12,8 @@
 
 <body>
   <div id="mainPage" class="page">
-    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">For a limited time only!
-      ends
-      August 1st, 2025!</marquee>
+    <marquee style="margin-top:1rem; padding-bottom: 1rem;" behavior="scroll" direction="right">
+      Run a Pathfinder meeting, get snacks for a Halloween party! Ends Oct 31st</marquee>
     <div>
 
       <button class="button" id="peegee" style="margin-top:2.5rem" onclick="window.location.href='gallery/'">project
@@ -45,8 +44,14 @@
   </div>
 
   <div id="mapPage">
-    <h1>Pathfinder Treasure Map</h1>
+    <div
+      style="width: 100vw; text-align: center; display: flex; justify-content: center; align-items: center; position: relative;">
+      <h1>Pathfinder Treasure Map</h1>
+    </div>
 
+    <a class="button"
+      style="width: 15rem; font-size: medium; z-index: 3; position: fixed;top: 0.5rem; left: 1rem;">Doing
+      Pathfinder with your club? Follow the slides!</a>
 
     <button class="button" id="backBtn" onclick="goToPage('mapPage', 'mainPage')">back</button>
 
@@ -573,14 +578,12 @@
             </a>
             <br>
             <br>
-            <a style="color:#f5c04e"
-              href="https://tinyurl.com/keycapCAD">
+            <a style="color:#f5c04e" href="https://tinyurl.com/keycapCAD">
               Switch Keycap
             </a>
             <br>
             <br>
-            <a style="color:#f5c04e"
-              href="https://tinyurl.com/5mmLEDCAD">
+            <a style="color:#f5c04e" href="https://tinyurl.com/5mmLEDCAD">
               5mm LED
             </a>
 
@@ -1313,39 +1316,39 @@
   </div>
 
   <div class="popup-overlay" id="helpPopup">
-        <div class="popup-content">
-            <button class="close-button" onclick="hideHelp()">×</button>
-            <h2>What is Pathfinder?</h2>
-            <p>Make a custom PCB with 4 buttons and 4 LEDs and get the parts to build it!</p>
+    <div class="popup-content">
+      <button class="close-button" onclick="hideHelp()">×</button>
+      <h2>What is Pathfinder?</h2>
+      <p>Make a custom PCB with 4 buttons and 4 LEDs and get the parts to build it!</p>
 
-            <h3>How does it work?</h3>
-            <p>Your Pathfinder will be a small controller pad that you can code to do some pretty awesome stuff.
-              With Pathfinder you'll learn
-            </p>
-            <ul>
-                <li>How to make a PCB schematic</li>
-                <li>How to design a PCB and route it</li>
-                <li>How to code using arduino</li>
-                <li>How basic input/output circuitry works</li>
-                <li>How to order a PCB from a manufacturer</li>
-            </ul>
+      <h3>How does it work?</h3>
+      <p>Your Pathfinder will be a small controller pad that you can code to do some pretty awesome stuff.
+        With Pathfinder you'll learn
+      </p>
+      <ul>
+        <li>How to make a PCB schematic</li>
+        <li>How to design a PCB and route it</li>
+        <li>How to code using arduino</li>
+        <li>How basic input/output circuitry works</li>
+        <li>How to order a PCB from a manufacturer</li>
+      </ul>
 
-            <h3>Why?</h3>
-            <p>It's all about restrictions: how awesome can you make something that only has 4 buttons and 4 lights? 
-              Pathfinder is the first installment of <a href="https://meghana.co">Meghana's</a> mission 
-            to get more teenagers into hardware.</p>
+      <h3>Why?</h3>
+      <p>It's all about restrictions: how awesome can you make something that only has 4 buttons and 4 lights?
+        Pathfinder is the first installment of <a href="https://meghana.co">Meghana's</a> mission
+        to get more teenagers into hardware.</p>
 
-            <h3>Need Help?</h3>
-            <p>If you get stuck, chuck a message in the #pathfinder channel on the Hack Club Slack!</p>
+      <h3>Need Help?</h3>
+      <p>If you get stuck, chuck a message in the #pathfinder channel on the Hack Club Slack!</p>
 
-            <h3>The Philosophy</h3>
-            <p>
-              Hardware is intimating. To non-technical people, it's a giant mountain that seems impossible to navigate.
-              For software geeks, it's a field they put off exploring because it's "not their thing". Everything I do aims 
-              to prove them wrong. Anyone can do hardware.
-            </p>
-        </div>
+      <h3>The Philosophy</h3>
+      <p>
+        Hardware is intimating. To non-technical people, it's a giant mountain that seems impossible to navigate.
+        For software geeks, it's a field they put off exploring because it's "not their thing". Everything I do aims
+        to prove them wrong. Anyone can do hardware.
+      </p>
     </div>
+  </div>
 
   <script>
 
