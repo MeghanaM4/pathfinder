@@ -32,7 +32,6 @@ async function getSubmissions() {
                 author: fields["GitHub Username"] || "Anonymous",
                 country: fields["Country"] || "Unknown",
                 githubUrl: fields["GitHub Username"] ? `https://github.com/${fields["GitHub Username"]}` : "#",
-                difficulty: fields["Difficulty Level"] || "beginner",
                 featured: fields["Featured"] === true || false,
                 //more fields
                 projectUrl: fields["Code URL"] || null,
